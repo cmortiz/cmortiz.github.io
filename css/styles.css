@@ -1,0 +1,57 @@
+html, body {
+    position: relative;
+    width: 100%;
+    font-family: 'Fira Sans';
+}
+
+h1 {
+    color: #D57500;
+    font-weight: 400;
+
+    
+}
+h2 {
+    color: #D57500;
+    font-weight: 400;
+    
+}
+p {
+    color: #0f0f0f;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.8em;
+}
+p a {
+    color: #0f0f0f;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+ul li {
+    margin: 12px 0 0 0;
+}
+ul li a {
+    color: #0f0f0f;
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+
+
+
+.footer-width {
+    width: 1040px;
+    padding: 0 80px 0 80px;
+}
+
+footer {
+    position: relative;
+    margin: 40px 0 80px 0;
+    text-align: right;
+}
+footer span {
+    color: #bcbdc2;
+    font-size: 0.7em;
+    font-weight: 700;
+}
