@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Carlos Ortiz</title>
+    <link>/</link>
+    <description>Recent content in About on Carlos Ortiz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Articles</title>
+      <link>/articles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/</guid>
+      <description>Quantum Computation and Quantum Information Generating Approximate Ground States of Molecules Using Quantum Machine Learning (with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Carlos Ortiz Marrero, Juan Miguel Arrazola, Nathan Wiebe)
+Submitted
+[arXiv] [Repo]
+Quantum Generative Training using Rényi Divergences (with Mária Kieferová, Nathan Wiebe)
+Submitted
+[arXiv] [Repo]
+Entanglement Induced Barren Plateaus (with Mária Kieferová, Nathan Wiebe)
+PRX Quantum
+[Paper] [arXiv] [Poster (by Mária Kieferová)]
+Classification of Rank 5 Premodular Categories (with Paul Bruilard)</description>
+      <content>&lt;blockquote&gt;
+&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/hybrid.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;generating-approximate-ground-states-of-molecules-using-quantum-machine-learning&#34;&gt;Generating Approximate Ground States of Molecules Using Quantum Machine Learning&lt;/h4&gt;
+&lt;p&gt;(with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Carlos Ortiz Marrero,
+Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2210.05489&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/XanaduAI/generative_qml_qchem&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/gt_hidden_loss_vis_4_samples_50.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;quantum-generative-training-using-rényi-divergences&#34;&gt;Quantum Generative Training using Rényi Divergences&lt;/h4&gt;
+&lt;p&gt;(with Mária Kieferová, Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2106.09567&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/pnnl/renyiqnets&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/uqnn.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;entanglement-induced-barren-plateaus&#34;&gt;Entanglement Induced Barren Plateaus&lt;/h4&gt;
+&lt;p&gt;(with Mária Kieferová, Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;PRX Quantum&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.2.040316&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/2010.15968&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://www.mariakieferova.com/s/Poster.pdf&#34;&gt;&lt;strong&gt;Poster (by Mária Kieferová)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/quantum_categories.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:80%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;classification-of-rank-5-premodular-categories&#34;&gt;Classification of Rank 5 Premodular Categories&lt;/h4&gt;
+&lt;p&gt;(with Paul Bruilard)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Journal of Mathematical Physics&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1063/1.5020256&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/1612.08769&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/Carlos-JMM_2017.pdf&#34;&gt;&lt;strong&gt;Slides (JMM 2017)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/quantum_games.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;quantum-graph-homomorphisms-via-operator-systems&#34;&gt;Quantum Graph Homomorphisms via Operator Systems&lt;/h4&gt;
+&lt;p&gt;(with Vern Paulsen)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Linear Algebra and its Applications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;http://dx.doi.org/10.1016/j.laa.2016.02.019&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;http://arxiv.org/abs/1505.00483&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/Carlos-Barcelona.pdf&#34;&gt;&lt;strong&gt;Slides (Barcelona 2015)&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/Carlos-JMM_2016.pdf&#34;&gt;&lt;strong&gt;Slides (JMM 2016)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/non-comm_banner.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;lovász-theta-type-norms-and-operator-systems&#34;&gt;Lovász Theta Type Norms and Operator Systems&lt;/h4&gt;
+&lt;p&gt;(with Vern Paulsen)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Linear Algebra and its Applications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;http://dx.doi.org/10.1016/j.laa.2015.03.022&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;http://arxiv.org/abs/1412.7101&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/Carlos-JMM_2015.pdf&#34;&gt;&lt;strong&gt;Slides (JMM 2015)&lt;/strong&gt;&lt;/a&gt;]
+  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h1 id=&#34;data-science-and-machine-learning&#34;&gt;&lt;em&gt;&lt;strong&gt;Data Science and Machine Learning&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/rmt.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;the-svd-of-convolutional-weights-a-cnn-interpretability-framework&#34;&gt;The SVD of Convolutional Weights: A CNN Interpretability Framework&lt;/h4&gt;
+&lt;p&gt;(with Brenda Praggastis, Davis Brown, Emilie Purvine, Madelyn Shapiro, Bei Wang)
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2208.06894&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/pnnl/DeepDataProfiler&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/imgnet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:35%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;evaluating-generative-networks-using-gaussian-mixtures-of-image-features&#34;&gt;Evaluating generative networks using Gaussian mixtures of image features&lt;/h4&gt;
+&lt;p&gt;with Lorenzo Luzi, Nile Wynar, Richard Baraniuk, Michael Henry&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;WACV 2023&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://openaccess.thecvf.com/content/WACV2023/html/Luzi_Evaluating_Generative_Networks_Using_Gaussian_Mixtures_of_Image_Features_WACV_2023_paper.html&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/2110.05240&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/1098-wacv-post.pdf&#34;&gt;&lt;strong&gt;Poster (by Lorenzo Luzi)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/phase_diagram.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;modeling-atmospheric-data-and-identifying-dynamics-temporal-data-driven-modeling-of-air-pollutants&#34;&gt;Modeling Atmospheric Data and Identifying Dynamics: Temporal Data-Driven Modeling of Air Pollutants&lt;/h4&gt;
+&lt;p&gt;with Javier Rubio-Herrero, Louis Fan&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Journal of Cleaner Production&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0959652621040324&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/2010.06538&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://ars.els-cdn.com/content/image/1-s2.0-S0959652621040324-ga1_lrg.jpg&#34;&gt;&lt;strong&gt;Poster&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/dogbone.jpeg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;application-of-entropy-and-signal-energy-for-ultrasound-based-classification-of-three-dimensional-printed-polyetherketoneketone-components&#34;&gt;Application of entropy and signal energy for ultrasound-based classification of three-dimensional printed polyetherketoneketone components&lt;/h4&gt;
+&lt;p&gt;with with Francesco Luzi, Michelle Fenn, Joseph Christ, Zachary Kennedy, Tamas Varga, Michael Hughes&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;The Journal of the Acoustical Society of America&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1121/10.0001581&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;https://www.pnnl.gov/sites/default/files/styles/hero_1600x1200/public/media/image/WEB_NuclearClues-Hero-01_0.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;tracking-the-chemical-evolution-of-iodine-species-using-recurrent-neural-networks&#34;&gt;Tracking the Chemical Evolution of Iodine Species Using Recurrent Neural Networks&lt;/h4&gt;
+&lt;p&gt;with Jenna Bilbrey, Michel Sassi, Andrew Ritzmann, Neil Henson, Malachi Schram&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;ACS Omega&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1021/acsomega.9b04104&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://www.pnnl.gov/news-media/tracking-neural-networks-nuclear-clues&#34;&gt;&lt;strong&gt;Press Release&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/gif_model.gif&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;robust-assessment-of-real-world-adversarial-examples&#34;&gt;Robust Assessment of Real-World Adversarial Examples&lt;/h4&gt;
+&lt;p&gt;with Brett Jefferson&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;CVPR 2020 Workshop on Adversarial Machine Learning in Computer Vision&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1109/CVPRW50498.2020.00404&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/1911.10435&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/36-poster.mp4&#34;&gt;&lt;strong&gt;Talk&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/36-slides.pdf&#34;&gt;&lt;strong&gt;Slides&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/hypernet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;hypernetwork-science-via-high-order-hypergraph-walks&#34;&gt;Hypernetwork Science via High-Order Hypergraph Walks&lt;/h4&gt;
+&lt;p&gt;with Sinan Aksoy, Cliff Joslyn, Brenda Praggastis, Emilie Purvine&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;EPJ Data Science&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1140/epjds/s13688-020-00231-0&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/1906.11295&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/PINNs.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;physicsinformed-deep-neural-networks-for-learning-parameters-and-constitutive-relationships-in-subsurface-flow-problems&#34;&gt;Physics‐Informed Deep Neural Networks for Learning Parameters and Constitutive Relationships in Subsurface Flow Problems&lt;/h4&gt;
+&lt;p&gt;with Alexandre Tartakovsky, Paris Perdikaris, Guzel Tartakovsky, David Barajas-Solano&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Water Resources Research&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1029/2019WR026731&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/1808.03398&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/cdi_indiana_2019.pdf&#34;&gt;&lt;strong&gt;Slides&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/paraklas/DarcyNets&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;/img/iso_em.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;physicsinformed-deep-neural-networks-for-learning-parameters-and-constitutive-relationships-in-subsurface-flow-problems-1&#34;&gt;Physics‐Informed Deep Neural Networks for Learning Parameters and Constitutive Relationships in Subsurface Flow Problems&lt;/h4&gt;
+&lt;p&gt;with Alexandre Tartakovsky, Paris Perdikaris, Guzel Tartakovsky, David Barajas-Solano&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Water Resources Research&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://journals.uwyo.edu/index.php/ela/article/view/6891&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/1808.10509&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Courses</title>
+      <link>/courses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/courses/</guid>
+      <description>Comming Soon&amp;hellip;</description>
+      <content>&lt;p&gt;Comming Soon&amp;hellip;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>Comming Soon&amp;hellip;</description>
+      <content>&lt;p&gt;Comming Soon&amp;hellip;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
