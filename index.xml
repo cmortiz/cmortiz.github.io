@@ -5,26 +5,38 @@
     <link>/</link>
     <description>Recent content in About on Carlos Ortiz</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Articles</title>
       <link>/articles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/articles/</guid>
-      <description>Quantum Computation and Quantum Information Generating Approximate Ground States of Molecules Using Quantum Machine Learning (with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Carlos Ortiz Marrero, Juan Miguel Arrazola, Nathan Wiebe)
+      <description>Quantum Computation and Quantum Information A Unified Theory of Barren Plateaus for Deep Parametrized Quantum Circuits (with Michael Ragone, Bojko N. Bakalov, Frédéric Sauvage, Alexander F. Kemper, Martin Larocca, Marco Cerezo)
+Submitted
+[arXiv]
+Generating Approximate Ground States of Molecules Using Quantum Machine Learning (with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Juan Miguel Arrazola, Nathan Wiebe)
 Submitted
 [arXiv] [Repo]
-Quantum Generative Training using Rényi Divergences (with Mária Kieferová, Nathan Wiebe)
-Submitted
-[arXiv] [Repo]
-Entanglement Induced Barren Plateaus (with Mária Kieferová, Nathan Wiebe)
-PRX Quantum
-[Paper] [arXiv] [Poster (by Mária Kieferová)]
-Classification of Rank 5 Premodular Categories (with Paul Bruilard)</description>
+Quantum Generative Training using Rényi Divergences (with Mária Kieferová, Nathan Wiebe)</description>
       <content>&lt;blockquote&gt;
 &lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;a-unified-theory-of-barren-plateaus-for-deep-parametrized-quantum-circuits&#34;&gt;A Unified Theory of Barren Plateaus for Deep Parametrized Quantum Circuits&lt;/h4&gt;
+&lt;p&gt;(with Michael Ragone, Bojko N. Bakalov, Frédéric Sauvage, Alexander F.
+Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2309.09342&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
   &lt;img src=&#34;/img/hybrid.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
@@ -33,7 +45,7 @@ Classification of Rank 5 Premodular Categories (with Paul Bruilard)</description
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;generating-approximate-ground-states-of-molecules-using-quantum-machine-learning&#34;&gt;Generating Approximate Ground States of Molecules Using Quantum Machine Learning&lt;/h4&gt;
-&lt;p&gt;(with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Carlos Ortiz Marrero,
+&lt;p&gt;(with Jack Ceroni, Torin F. Stetina, Mária Kieferová,
 Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2210.05489&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
