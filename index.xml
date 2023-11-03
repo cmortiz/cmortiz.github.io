@@ -12,16 +12,30 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/articles/</guid>
-      <description>Quantum Computation and Quantum Information A Unified Theory of Barren Plateaus for Deep Parametrized Quantum Circuits (with Michael Ragone, Bojko N. Bakalov, Frédéric Sauvage, Alexander F. Kemper, Martin Larocca, Marco Cerezo)
+      <description>Quantum Computation and Quantum Information Variational Methods for Computing Non-Local Quantum Strategies (with Jim Furches Nathan Wiebe)
 Submitted
 [arXiv]
-Generating Approximate Ground States of Molecules Using Quantum Machine Learning (with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Juan Miguel Arrazola, Nathan Wiebe)
+A Unified Theory of Barren Plateaus for Deep Parametrized Quantum Circuits (with Michael Ragone, Bojko N. Bakalov, Frédéric Sauvage, Alexander F. Kemper, Martin Larocca, Marco Cerezo)
 Submitted
-[arXiv] [Repo]
-Quantum Generative Training using Rényi Divergences (with Mária Kieferová, Nathan Wiebe)</description>
+[arXiv]
+Generating Approximate Ground States of Molecules Using Quantum Machine Learning (with Jack Ceroni, Torin F. Stetina, Mária Kieferová, Juan Miguel Arrazola, Nathan Wiebe)</description>
       <content>&lt;blockquote&gt;
 &lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;variational-methods-for-computing-non-local-quantum-strategies&#34;&gt;Variational Methods for Computing Non-Local Quantum Strategies&lt;/h4&gt;
+&lt;p&gt;(with Jim Furches Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2311.01363&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
   &lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;  /&gt;
@@ -190,7 +204,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;evaluating-generative-networks-using-gaussian-mixtures-of-image-features&#34;&gt;Evaluating generative networks using Gaussian mixtures of image features&lt;/h4&gt;
-&lt;p&gt;with Lorenzo Luzi, Nile Wynar, Richard Baraniuk, Michael Henry&lt;br&gt;
+&lt;p&gt;(with Lorenzo Luzi, Nile Wynar, Richard Baraniuk, Michael Henry)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;WACV 2023&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://openaccess.thecvf.com/content/WACV2023/html/Luzi_Evaluating_Generative_Networks_Using_Gaussian_Mixtures_of_Image_Features_WACV_2023_paper.html&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/2110.05240&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
@@ -206,7 +220,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;modeling-atmospheric-data-and-identifying-dynamics-temporal-data-driven-modeling-of-air-pollutants&#34;&gt;Modeling Atmospheric Data and Identifying Dynamics: Temporal Data-Driven Modeling of Air Pollutants&lt;/h4&gt;
-&lt;p&gt;with Javier Rubio-Herrero, Louis Fan&lt;br&gt;
+&lt;p&gt;(with Javier Rubio-Herrero, Louis Fan)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Journal of Cleaner Production&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0959652621040324&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/2010.06538&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
@@ -222,7 +236,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;application-of-entropy-and-signal-energy-for-ultrasound-based-classification-of-three-dimensional-printed-polyetherketoneketone-components&#34;&gt;Application of entropy and signal energy for ultrasound-based classification of three-dimensional printed polyetherketoneketone components&lt;/h4&gt;
-&lt;p&gt;with with Francesco Luzi, Michelle Fenn, Joseph Christ, Zachary Kennedy, Tamas Varga, Michael Hughes&lt;br&gt;
+&lt;p&gt;(with with Francesco Luzi, Michelle Fenn, Joseph Christ, Zachary Kennedy, Tamas Varga, Michael Hughes)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;The Journal of the Acoustical Society of America&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1121/10.0001581&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
 &lt;/li&gt;
@@ -236,7 +250,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;tracking-the-chemical-evolution-of-iodine-species-using-recurrent-neural-networks&#34;&gt;Tracking the Chemical Evolution of Iodine Species Using Recurrent Neural Networks&lt;/h4&gt;
-&lt;p&gt;with Jenna Bilbrey, Michel Sassi, Andrew Ritzmann, Neil Henson, Malachi Schram&lt;br&gt;
+&lt;p&gt;(with Jenna Bilbrey, Michel Sassi, Andrew Ritzmann, Neil Henson, Malachi Schram)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;ACS Omega&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1021/acsomega.9b04104&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://www.pnnl.gov/news-media/tracking-neural-networks-nuclear-clues&#34;&gt;&lt;strong&gt;Press Release&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
@@ -251,7 +265,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;robust-assessment-of-real-world-adversarial-examples&#34;&gt;Robust Assessment of Real-World Adversarial Examples&lt;/h4&gt;
-&lt;p&gt;with Brett Jefferson&lt;br&gt;
+&lt;p&gt;(with Brett Jefferson)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;CVPR 2020 Workshop on Adversarial Machine Learning in Computer Vision&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1109/CVPRW50498.2020.00404&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/1911.10435&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
@@ -268,7 +282,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;hypernetwork-science-via-high-order-hypergraph-walks&#34;&gt;Hypernetwork Science via High-Order Hypergraph Walks&lt;/h4&gt;
-&lt;p&gt;with Sinan Aksoy, Cliff Joslyn, Brenda Praggastis, Emilie Purvine&lt;br&gt;
+&lt;p&gt;(with Sinan Aksoy, Cliff Joslyn, Brenda Praggastis, Emilie Purvine)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;EPJ Data Science&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1140/epjds/s13688-020-00231-0&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/1906.11295&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
@@ -283,7 +297,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;physicsinformed-deep-neural-networks-for-learning-parameters-and-constitutive-relationships-in-subsurface-flow-problems&#34;&gt;Physics‐Informed Deep Neural Networks for Learning Parameters and Constitutive Relationships in Subsurface Flow Problems&lt;/h4&gt;
-&lt;p&gt;with Alexandre Tartakovsky, Paris Perdikaris, Guzel Tartakovsky, David Barajas-Solano&lt;br&gt;
+&lt;p&gt;(with Alexandre Tartakovsky, Paris Perdikaris, Guzel Tartakovsky, David Barajas-Solano)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Water Resources Research&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://doi.org/10.1029/2019WR026731&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/1808.03398&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
@@ -300,7 +314,7 @@ Wang)&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h4 id=&#34;on-the-structure-of-isometrically-embeddable-metric-spaces&#34;&gt;On the structure of isometrically embeddable metric spaces&lt;/h4&gt;
-&lt;p&gt;with Stephen Young, Kathleen Nowak&lt;br&gt;
+&lt;p&gt;(with Stephen Young, Kathleen Nowak)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Electronic Journal of Linear Algebra&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://journals.uwyo.edu/index.php/ela/article/view/6891&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/1808.10509&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
