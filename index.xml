@@ -12,13 +12,25 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/articles/</guid>
-      <description>Quantum Computation and Quantum Information Adaptive Quantum Generative Training using an Unbounded Loss Function (with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)
-IEEE International Conference on Quantum Computing and Engineering (QCE24)
-[arXiv] [Repo]
-Variational Methods for Computing Non-Local Quantum Strategies (with Jim Furches, Nathan Wiebe)
-Submitted
-[arXiv] [Repo] [Poster (by Jim Furches)]
-A Lie Algebraic Theory of Barren Plateaus for Deep Parameterized Quantum Circuits (with Michael Ragone, Bojko N.</description>
+      <description>&lt;blockquote&gt;
+&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;adaptive-quantum-generative-training-using-an-unbounded-loss-function&#34;&gt;Adaptive Quantum Generative Training using an Unbounded Loss Function&lt;/h4&gt;
+&lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/kmsherbertvt/RenyiADAPT&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;  &lt;/p&gt;</description>
       <content>&lt;blockquote&gt;
 &lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
 &lt;/blockquote&gt;
@@ -65,7 +77,8 @@ A Lie Algebraic Theory of Barren Plateaus for Deep Parameterized Quantum Circuit
 Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Nature Communications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://www.nature.com/articles/s41467-024-49909-3&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
-[&lt;a href=&#34;https://arxiv.org/abs/2309.09342&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+[&lt;a href=&#34;https://arxiv.org/abs/2309.09342&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://www.pnnl.gov/publications/unified-mathematical-theory-barren-plateaus&#34;&gt;&lt;strong&gt;Press Release&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -347,17 +360,28 @@ Wang)&lt;br&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/projects/</guid>
-      <description>NCSU/Nagoya University Data Science Academy Workshop (Instructor, Spring 2024))
-[Press Release]
-Co-Design Center for Quantum Advantage (Deputy Software Thrust Lead)
-[Website]
-NCSU Quantum Workshop: Quantum Simulation (Co-organizer with Dror Baron, Bojko Bakalov, Rebekah Herrman)
-[Website]
-NCSU Quantum Workshop: Quantum Machine Learning (Co-organizer with Dror Baron, Bojko Bakalov)
-[Website]
-PNNL Quantum Computing Bootcamp (Co-organizer with Tobias Hagge, Nathan Wiebe)
-[2022] [2021]
-Discovery via Quantum Neural Networks (Project Lead; Team: Nathan Wiebe)</description>
+      <description>&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;ncsunagoya-university-data-science-academy-workshop&#34;&gt;NCSU/Nagoya University Data Science Academy Workshop&lt;/h4&gt;
+&lt;p&gt;(Instructor, Spring 2024))&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://datascienceacademy.ncsu.edu/2024/04/12/nagoya-workshop/&#34;&gt;&lt;strong&gt;Press Release&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;  &lt;/p&gt;
+
+  &lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;co-design-center-for-quantum-advantage&#34;&gt;Co-Design Center for Quantum Advantage&lt;/h4&gt;
+&lt;p&gt;(Deputy Software Thrust Lead)&lt;/p&gt;</description>
       <content>&lt;p&gt;  &lt;/p&gt;
 
   &lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;  /&gt;
