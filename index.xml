@@ -13,11 +13,10 @@
       
       <guid>/articles/</guid>
       <description>&lt;blockquote&gt;
-&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
-&lt;/blockquote&gt;
+&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;&lt;/blockquote&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -26,14 +25,15 @@
 &lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;IEEE Best Paper Award&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+&lt;p&gt;[&lt;a href=&#34;https://ieeexplore.ieee.org/abstract/document/10821301&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://github.com/kmsherbertvt/RenyiADAPT&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;  /&gt;
+&lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -49,7 +49,7 @@
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;  /&gt;
+&lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -59,11 +59,10 @@
 Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Nature Communications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
       <content>&lt;blockquote&gt;
-&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
-&lt;/blockquote&gt;
+&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;&lt;/blockquote&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -72,14 +71,15 @@ Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;IEEE Best Paper Award&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+&lt;p&gt;[&lt;a href=&#34;https://ieeexplore.ieee.org/abstract/document/10821301&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://github.com/kmsherbertvt/RenyiADAPT&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;  /&gt;
+&lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -95,7 +95,7 @@ Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;  /&gt;
+&lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -112,7 +112,7 @@ Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/hybrid.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/hybrid.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -128,7 +128,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/gt_hidden_loss_vis_4_samples_50.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/gt_hidden_loss_vis_4_samples_50.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -143,7 +143,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/uqnn.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/uqnn.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -159,7 +159,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quantum_categories.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:80%;&#34;  /&gt;
+&lt;img src=&#34;/img/quantum_categories.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:80%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -175,7 +175,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quantum_games.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/quantum_games.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -192,7 +192,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/non-comm_banner.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;  /&gt;
+&lt;img src=&#34;/img/non-comm_banner.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -207,11 +207,10 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;/ul&gt;
 &lt;p&gt;  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h1 id=&#34;data-science-and-machine-learning&#34;&gt;&lt;em&gt;&lt;strong&gt;Data Science and Machine Learning&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
-&lt;/blockquote&gt;
+&lt;h1 id=&#34;data-science-and-machine-learning&#34;&gt;&lt;em&gt;&lt;strong&gt;Data Science and Machine Learning&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;&lt;/blockquote&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/dogs.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;  /&gt;
+&lt;img src=&#34;/img/dogs.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -225,7 +224,7 @@ Juan Miguel Arrazola, Nathan Wiebe)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/fix_jacobi_ensambles.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/fix_jacobi_ensambles.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -241,7 +240,7 @@ Segovia-Dominguez, Nate Veldt, Stephen J. Young)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/rmt.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/rmt.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -257,7 +256,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/imgnet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:35%;&#34;  /&gt;
+&lt;img src=&#34;/img/imgnet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:35%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -273,7 +272,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/phase_diagram.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/phase_diagram.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -289,7 +288,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/dogbone.jpeg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/dogbone.jpeg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -303,7 +302,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;https://www.pnnl.gov/sites/default/files/styles/hero_1600x1200/public/media/image/WEB_NuclearClues-Hero-01_0.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;https://www.pnnl.gov/sites/default/files/styles/hero_1600x1200/public/media/image/WEB_NuclearClues-Hero-01_0.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -318,7 +317,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/gif_model.gif&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/gif_model.gif&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -335,7 +334,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/hypernet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/hypernet.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -350,7 +349,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/PINNs.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;  /&gt;
+&lt;img src=&#34;/img/PINNs.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:55%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -367,7 +366,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/iso_em.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/iso_em.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -390,7 +389,7 @@ Wang)&lt;br&gt;
       <guid>/projects/</guid>
       <description>&lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;  /&gt;
+&lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -403,7 +402,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -416,7 +415,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quantum_sim.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/quantum_sim.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -429,7 +428,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quan_hardw.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/quan_hardw.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -442,7 +441,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/PCSD0414_QuantumBootcamp.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/PCSD0414_QuantumBootcamp.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -451,7 +450,7 @@ Wang)&lt;br&gt;
 &lt;p&gt;(Co-organizer with Tobias Hagge, Nathan Wiebe)&lt;/p&gt;</description>
       <content>&lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;  /&gt;
+&lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -464,7 +463,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -477,7 +476,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quantum_sim.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/quantum_sim.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -490,7 +489,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/quan_hardw.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/quan_hardw.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -503,7 +502,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/PCSD0414_QuantumBootcamp.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;  /&gt;
+&lt;img src=&#34;/img/PCSD0414_QuantumBootcamp.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -517,7 +516,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/NSD_0475_ILLUS_MARSGraphics-Logo2-01.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;  /&gt;
+&lt;img src=&#34;/img/NSD_0475_ILLUS_MARSGraphics-Logo2-01.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -530,7 +529,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/cdi_logo.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;  /&gt;
+&lt;img src=&#34;/img/cdi_logo.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -543,7 +542,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/IMA-math_modeling.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;  /&gt;
+&lt;img src=&#34;/img/IMA-math_modeling.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:45%;&#34;    /&gt;
 
 
 &lt;ul&gt;
@@ -556,7 +555,7 @@ Wang)&lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-  &lt;img src=&#34;/img/conm-747.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:40%;&#34;  /&gt;
+&lt;img src=&#34;/img/conm-747.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:40%;&#34;    /&gt;
 
 
 &lt;ul&gt;
