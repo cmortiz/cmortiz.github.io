@@ -15,30 +15,14 @@
       <description>&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-&lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;adaptive-quantum-generative-training-using-an-unbounded-loss-function&#34;&gt;Adaptive Quantum Generative Training using an Unbounded Loss Function&lt;/h4&gt;
-&lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;
-&lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;&lt;strong&gt;IEEE Best Paper Award&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;[&lt;a href=&#34;https://ieeexplore.ieee.org/abstract/document/10821301&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
-[&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
-[&lt;a href=&#34;https://github.com/kmsherbertvt/RenyiADAPT&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;  &lt;/p&gt;
-
 &lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
 
 
 &lt;ul&gt;
 &lt;li&gt;
-&lt;h4 id=&#34;variational-methods-for-computing-non-local-quantum-strategies&#34;&gt;Variational Methods for Computing Non-Local Quantum Strategies&lt;/h4&gt;
-&lt;p&gt;(with Jim Furches, Nathan Wiebe)&lt;br&gt;
+&lt;h4 id=&#34;application-level-benchmarking-of-quantum-computers-using-nonlocal-game-strategies&#34;&gt;Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies&lt;/h4&gt;
+&lt;p&gt;(with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Expanded Version of &amp;ldquo;Variational Methods for Computing NonLocal Quantum Strategies&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2311.01363&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://github.com/jfurches/nonlocalgames&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]
@@ -48,18 +32,35 @@
 &lt;hr&gt;
 &lt;p&gt;  &lt;/p&gt;
 
-&lt;img src=&#34;/img/unify_bp.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:60%;&#34;    /&gt;
+&lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
 &lt;ul&gt;
 &lt;li&gt;
-&lt;h4 id=&#34;a-lie-algebraic-theory-of-barren-plateaus-for-deep-parameterized-quantum-circuits&#34;&gt;A Lie Algebraic Theory of Barren Plateaus for Deep Parameterized Quantum Circuits&lt;/h4&gt;
-&lt;p&gt;(with Michael Ragone, Bojko N. Bakalov, Frédéric Sauvage, Alexander F.
-Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
-&lt;em&gt;&lt;strong&gt;Nature Communications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+&lt;h4 id=&#34;adaptive-quantum-generative-training-using-an-unbounded-loss-function&#34;&gt;Adaptive Quantum Generative Training using an Unbounded Loss Function&lt;/h4&gt;
+&lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;IEEE Best Paper Award&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;
 &lt;p&gt;  &lt;/p&gt;
 
+&lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;application-level-benchmarking-of-quantum-computers-using-nonlocal-game-strategies&#34;&gt;Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies&lt;/h4&gt;
+&lt;p&gt;(with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Expanded Version of &amp;ldquo;Variational Methods for Computing NonLocal Quantum Strategies&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2311.01363&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;https://github.com/jfurches/nonlocalgames&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]
+[&lt;a href=&#34;/img/QIP_2024_Poster.pdf&#34;&gt;&lt;strong&gt;Poster (by Jim Furches)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;  &lt;/p&gt;
+
 &lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;
 
 
@@ -72,22 +73,6 @@ Kemper, Martin Larocca, Marco Cerezo)&lt;br&gt;
 &lt;p&gt;[&lt;a href=&#34;https://ieeexplore.ieee.org/abstract/document/10821301&#34;&gt;&lt;strong&gt;Paper&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://arxiv.org/abs/2408.00218&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
 [&lt;a href=&#34;https://github.com/kmsherbertvt/RenyiADAPT&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;  &lt;/p&gt;
-
-&lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h4 id=&#34;variational-methods-for-computing-non-local-quantum-strategies&#34;&gt;Variational Methods for Computing Non-Local Quantum Strategies&lt;/h4&gt;
-&lt;p&gt;(with Jim Furches, Nathan Wiebe)&lt;br&gt;
-&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2311.01363&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]
-[&lt;a href=&#34;https://github.com/jfurches/nonlocalgames&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]
-[&lt;a href=&#34;/img/QIP_2024_Poster.pdf&#34;&gt;&lt;strong&gt;Poster (by Jim Furches)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
