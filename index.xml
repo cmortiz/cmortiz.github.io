@@ -4,22 +4,41 @@
     <title>About on Carlos Ortiz</title>
     <link>/</link>
     <description>Recent content in About on Carlos Ortiz</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Articles</title>
       <link>/articles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>/articles/</guid>
-      <description>&lt;h1 id=&#34;quantum-computation-and-quantum-information&#34;&gt;&lt;em&gt;&lt;strong&gt;Quantum Computation and Quantum Information&lt;/strong&gt;&lt;/em&gt;&lt;/h1&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/strategy.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:75%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;application-level-benchmarking-of-quantum-computers-using-nonlocal-game-strategies&#34;&gt;Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies&lt;/h4&gt;&#xA;&lt;p&gt;(with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;Expanded Version of &amp;ldquo;Variational Methods for Computing NonLocal Quantum Strategies&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;Submitted&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;[&lt;a href=&#34;https://arxiv.org/abs/2311.01363&#34;&gt;&lt;strong&gt;arXiv&lt;/strong&gt;&lt;/a&gt;]&#xA;[&lt;a href=&#34;https://github.com/jfurches/nonlocalgames&#34;&gt;&lt;strong&gt;Repo&lt;/strong&gt;&lt;/a&gt;]&#xA;[&lt;a href=&#34;/img/QIP_2024_Poster.pdf&#34;&gt;&lt;strong&gt;Poster (by Jim Furches)&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/firststeps_range.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;adaptive-quantum-generative-training-using-an-unbounded-loss-function&#34;&gt;Adaptive Quantum Generative Training using an Unbounded Loss Function&lt;/h4&gt;&#xA;&lt;p&gt;(with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;IEEE International Conference on Quantum Computing and Engineering (QCE24)&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;IEEE Best Paper Award&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      <description>Quantum Computation and Quantum Information Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies (with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)
+Expanded Version of &amp;ldquo;Variational Methods for Computing NonLocal Quantum Strategies&amp;rdquo;
+Submitted
+[arXiv] [Repo] [Poster (by Jim Furches)]
+Adaptive Quantum Generative Training using an Unbounded Loss Function (with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)
+IEEE International Conference on Quantum Computing and Engineering (QCE24)
+IEEE Best Paper Award</description>
     </item>
+    
     <item>
       <title>Projects</title>
       <link>/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>/projects/</guid>
-      <description>&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/DSC1679.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:50%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;ncsunagoya-university-data-science-academy-workshop&#34;&gt;NCSU/Nagoya University Data Science Academy Workshop&lt;/h4&gt;&#xA;&lt;p&gt;(Instructor, Spring 2024))&lt;/p&gt;&#xA;&lt;p&gt;[&lt;a href=&#34;https://datascienceacademy.ncsu.edu/2024/04/12/nagoya-workshop/&#34;&gt;&lt;strong&gt;Press Release&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/c2qa-logo-wht.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;co-design-center-for-quantum-advantage&#34;&gt;Co-Design Center for Quantum Advantage&lt;/h4&gt;&#xA;&lt;p&gt;(Deputy Software Thrust Lead)&lt;/p&gt;&#xA;&lt;p&gt;[&lt;a href=&#34;https://www.bnl.gov/quantumcenter/&#34;&gt;&lt;strong&gt;Website&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/quantum_sim.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;ncsu-quantum-workshop-quantum-simulation&#34;&gt;NCSU Quantum Workshop: Quantum Simulation&lt;/h4&gt;&#xA;&lt;p&gt;(Co-organizer with Dror Baron, Bojko Bakalov, Rebekah Herrman)&lt;/p&gt;&#xA;&lt;p&gt;[&lt;a href=&#34;https://quantum.ncsu.edu/ibm-quantum/workshop/november-2023-workshop/&#34;&gt;&lt;strong&gt;Website&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/quan_hardw.png&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;ncsu-quantum-workshop-quantum-machine-learning&#34;&gt;NCSU Quantum Workshop: Quantum Machine Learning&lt;/h4&gt;&#xA;&lt;p&gt;(Co-organizer with Dror Baron, Bojko Bakalov)&lt;/p&gt;&#xA;&lt;p&gt;[&lt;a href=&#34;https://quantum.ncsu.edu/ibm-quantum/workshop/january-2023-workshop/&#34;&gt;&lt;strong&gt;Website&lt;/strong&gt;&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;  &lt;/p&gt;&#xA;&#xA;&lt;img src=&#34;/img/PCSD0414_QuantumBootcamp.jpg&#34;  alt=&#34;Image 404 :(&#34;  class=&#34;center&#34;  style=&#34;border-radius: 16px; width:65%;&#34;    /&gt;&#xA;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h4 id=&#34;pnnl-quantum-computing-bootcamp&#34;&gt;PNNL Quantum Computing Bootcamp&lt;/h4&gt;&#xA;&lt;p&gt;(Co-organizer with Tobias Hagge, Nathan Wiebe)&lt;/p&gt;</description>
+      <description>NCSU/Nagoya University Data Science Academy Workshop (Instructor, Spring 2024))
+[Press Release]
+Co-Design Center for Quantum Advantage (Deputy Software Thrust Lead)
+[Website]
+NCSU Quantum Workshop: Quantum Simulation (Co-organizer with Dror Baron, Bojko Bakalov, Rebekah Herrman)
+[Website]
+NCSU Quantum Workshop: Quantum Machine Learning (Co-organizer with Dror Baron, Bojko Bakalov)
+[Website]
+PNNL Quantum Computing Bootcamp (Co-organizer with Tobias Hagge, Nathan Wiebe)
+[2022] [2021]
+Discovery via Quantum Neural Networks (Project Lead; Team: Nathan Wiebe)</description>
     </item>
+    
   </channel>
 </rss>
