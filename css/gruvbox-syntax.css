@@ -1,0 +1,193 @@
+/* Gruvbox Syntax Highlighting Enhancement */
+
+/* Enhanced syntax highlighting with full Gruvbox color palette */
+:root {
+  /* Syntax-specific Gruvbox colors */
+  --syntax-keyword: #fe8019;        /* Orange for keywords */
+  --syntax-string: #b8bb26;         /* Bright green for strings */
+  --syntax-comment: #928374;        /* Gray for comments */
+  --syntax-number: #d3869b;         /* Purple for numbers */
+  --syntax-function: #fabd2f;       /* Yellow for functions */
+  --syntax-type: #83a598;           /* Blue for types */
+  --syntax-operator: #8ec07c;       /* Aqua for operators */
+  --syntax-variable: #ebdbb2;       /* Foreground for variables */
+  --syntax-constant: #d65d0e;       /* Dark orange for constants */
+  --syntax-error: #fb4934;          /* Bright red for errors */
+}
+
+/* Override existing syntax highlighting */
+/* Comments */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs { 
+  color: var(--syntax-comment); 
+  font-style: italic; 
+}
+
+/* Keywords */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt { 
+  color: var(--syntax-keyword); 
+  font-weight: bold; 
+}
+
+/* Strings */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss { 
+  color: var(--syntax-string); 
+}
+
+/* Numbers */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo { 
+  color: var(--syntax-number); 
+}
+
+/* Functions */
+.chroma .nf,
+.chroma .fm { 
+  color: var(--syntax-function); 
+  font-weight: bold; 
+}
+
+/* Types */
+.chroma .kt,
+.chroma .nc { 
+  color: var(--syntax-type); 
+}
+
+/* Variables */
+.chroma .n,
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm { 
+  color: var(--syntax-variable); 
+}
+
+/* Constants */
+.chroma .no,
+.chroma .bp { 
+  color: var(--syntax-constant); 
+  font-weight: bold; 
+}
+
+/* Operators */
+.chroma .o,
+.chroma .ow { 
+  color: var(--syntax-operator); 
+}
+
+/* Attributes */
+.chroma .na { 
+  color: var(--syntax-function); 
+}
+
+/* Tags (HTML/XML) */
+.chroma .nt { 
+  color: var(--syntax-type); 
+  font-weight: bold; 
+}
+
+/* Decorators */
+.chroma .nd { 
+  color: var(--syntax-operator); 
+}
+
+/* Errors */
+.chroma .err { 
+  color: var(--syntax-error); 
+  background-color: color-mix(in srgb, var(--syntax-error) 15%, transparent);
+  border-radius: 3px;
+}
+
+/* Generic (diff-style) */
+.chroma .gd { 
+  color: var(--syntax-error); 
+}
+.chroma .gi { 
+  color: var(--syntax-string); 
+}
+.chroma .gu { 
+  color: var(--syntax-function); 
+  font-weight: bold; 
+}
+
+/* Line numbers styling */
+.chroma .lnt,
+.chroma .ln { 
+  color: var(--syntax-comment); 
+}
+
+/* Enhanced code block styling */
+.chroma {
+  background-color: #3c3836 !important;
+  border: 1px solid #504945;
+  border-radius: 6px;
+}
+
+.chroma .line {
+  padding: 0 12px;
+}
+
+/* Better highlighting for current line */
+.chroma .hl {
+  background-color: #504945 !important;
+}
+
+/* Code title styling for better integration */
+.code-title {
+  background: var(--gruvbox-green);
+  color: var(--gruvbox-bg0);
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: -1px;
+  border: 1px solid #504945;
+  border-bottom: none;
+}
+
+.code-title + .highlight .chroma {
+  border-radius: 0 0 6px 6px;
+}
+
+/* Copy button styling */
+.copy-button {
+  background: transparent;
+  color: var(--gruvbox-bg0);
+  border: 1px solid var(--gruvbox-bg0);
+  padding: 4px 8px;
+  font-size: 0.8em;
+  border-radius: 3px;
+  margin-left: auto;
+}
+
+.copy-button:hover {
+  background: var(--gruvbox-bg0);
+  color: var(--gruvbox-green);
+}
