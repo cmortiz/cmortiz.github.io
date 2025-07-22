@@ -31,10 +31,13 @@
   --gruvbox-bright-aqua: #8ec07c;
   --gruvbox-bright-orange: #fe8019;
   
+  /* Custom dark green accent */
+  --custom-dark-green: #1E4D2B;
+  
   /* Override Terminal theme variables with Gruvbox colors */
   --background: var(--gruvbox-bg0);
   --foreground: var(--gruvbox-fg1);
-  --accent: var(--gruvbox-green);
+  --accent: var(--custom-dark-green);
   
   /* Additional color variables for syntax highlighting */
   --code-border: var(--gruvbox-bg2);
@@ -42,12 +45,12 @@
   --tertiary-accent: var(--gruvbox-orange);
   --error-color: var(--gruvbox-red);
   --warning-color: var(--gruvbox-yellow);
-  --success-color: var(--gruvbox-green);
+  --success-color: var(--custom-dark-green);
 }
 
 /* Enhanced syntax highlighting variables */
 :root {
-  --first-tone: var(--gruvbox-green);
+  --first-tone: var(--custom-dark-green);
   --second-tone: var(--gruvbox-blue);
   --comment: var(--gruvbox-fg4);
   --string-color: var(--gruvbox-bright-orange);
@@ -58,7 +61,7 @@
 
 /* Improve contrast for better readability */
 .container {
-  border-right-color: color-mix(in srgb, var(--gruvbox-green) 15%, transparent);
+  border-right-color: color-mix(in srgb, var(--custom-dark-green) 15%, transparent);
 }
 
 /* Enhance code blocks with Gruvbox styling */
@@ -74,7 +77,7 @@ code, kbd {
 
 /* Style blockquotes with Gruvbox colors */
 blockquote {
-  border-color: var(--gruvbox-green);
+  border-color: var(--custom-dark-green);
 }
 
 /* Table styling */
@@ -93,17 +96,17 @@ textarea:focus-visible,
 textarea:active,
 select:focus-visible,
 select:active {
-  border-color: var(--gruvbox-green);
-  outline-color: var(--gruvbox-green);
+  border-color: var(--custom-dark-green);
+  outline-color: var(--custom-dark-green);
 }
 
 /* Enhanced image borders */
 img {
-  border-color: var(--gruvbox-green);
+  border-color: var(--custom-dark-green);
 }
 
 /* Better contrast for figure captions */
 figure figcaption {
-  background: var(--gruvbox-green);
+  background: var(--custom-dark-green);
   color: var(--gruvbox-bg0);
 }
