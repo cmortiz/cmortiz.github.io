@@ -162,7 +162,7 @@
 
 /* Code title styling for better integration */
 .code-title {
-  background: #1E4D2B;
+  background: var(--gruvbox-green);
   color: var(--gruvbox-bg0);
   font-weight: bold;
   padding: 8px 12px;
@@ -189,5 +189,5 @@
 
 .copy-button:hover {
   background: var(--gruvbox-bg0);
-  color: #1E4D2B;
+  color: var(--gruvbox-green);
 }
