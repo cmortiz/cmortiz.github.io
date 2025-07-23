@@ -34,7 +34,7 @@
   /* Override Terminal theme variables with Gruvbox colors - force override */
   --background: var(--gruvbox-bg0) !important;
   --foreground: var(--gruvbox-fg1) !important;
-  --accent: var(--gruvbox-green) !important;
+  --accent: var(--gruvbox-bright-aqua) !important;
   
   /* Additional color variables for syntax highlighting */
   --code-border: var(--gruvbox-bg2);
@@ -42,12 +42,12 @@
   --tertiary-accent: var(--gruvbox-orange);
   --error-color: var(--gruvbox-red);
   --warning-color: var(--gruvbox-yellow);
-  --success-color: var(--gruvbox-green);
+  --success-color: var(--gruvbox-bright-aqua);
 }
 
 /* Enhanced syntax highlighting variables */
 :root {
-  --first-tone: var(--gruvbox-green);
+  --first-tone: var(--gruvbox-bright-aqua);
   --second-tone: var(--gruvbox-blue);
   --comment: var(--gruvbox-fg4);
   --string-color: var(--gruvbox-bright-orange);
@@ -58,7 +58,7 @@
 
 /* Improve contrast for better readability */
 .container {
-  border-right-color: color-mix(in srgb, var(--gruvbox-green) 15%, transparent);
+  border-right-color: color-mix(in srgb, var(--gruvbox-bright-aqua) 15%, transparent);
 }
 
 /* Enhance code blocks with Gruvbox styling */
@@ -74,7 +74,7 @@ code, kbd {
 
 /* Style blockquotes with Gruvbox colors */
 blockquote {
-  border-color: var(--gruvbox-green);
+  border-color: var(--gruvbox-bright-aqua);
 }
 
 /* Table styling */
@@ -93,17 +93,17 @@ textarea:focus-visible,
 textarea:active,
 select:focus-visible,
 select:active {
-  border-color: var(--gruvbox-green);
-  outline-color: var(--gruvbox-green);
+  border-color: var(--gruvbox-bright-aqua);
+  outline-color: var(--gruvbox-bright-aqua);
 }
 
 /* Enhanced image borders */
 img {
-  border-color: var(--gruvbox-green);
+  border-color: var(--gruvbox-bright-aqua);
 }
 
 /* Better contrast for figure captions */
 figure figcaption {
-  background: var(--gruvbox-green);
+  background: var(--gruvbox-bright-aqua);
   color: var(--gruvbox-bg0);
 }
