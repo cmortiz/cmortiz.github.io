@@ -31,10 +31,10 @@
   --gruvbox-bright-aqua: #8ec07c;
   --gruvbox-bright-orange: #fe8019;
   
-  /* Override Terminal theme variables with Gruvbox colors */
-  --background: var(--gruvbox-bg0);
-  --foreground: var(--gruvbox-fg1);
-  --accent: var(--gruvbox-green);
+  /* Override Terminal theme variables with Gruvbox colors - force override */
+  --background: var(--gruvbox-bg0) !important;
+  --foreground: var(--gruvbox-fg1) !important;
+  --accent: var(--gruvbox-green) !important;
   
   /* Additional color variables for syntax highlighting */
   --code-border: var(--gruvbox-bg2);
