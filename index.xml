@@ -12,13 +12,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/articles/</guid>
-      <description>Quantum Computation and Quantum Information Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies (with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)
+      <description>Quantum Computation and Quantum Information 1. Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies (with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe)
 Expanded Version of &amp;ldquo;Variational Methods for Computing NonLocal Quantum Strategies&amp;rdquo;
-Submitted
-[arXiv] [Repo] [Poster (by Jim Furches)]
-Adaptive Quantum Generative Training using an Unbounded Loss Function (with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)
-IEEE International Conference on Quantum Computing and Engineering (QCE24)
-IEEE Best Paper Award</description>
+Quantum Science and Technology
+[Paper] [arXiv] [Repo] [Poster (by Jim Furches)]
+2. Adaptive Quantum Generative Training using an Unbounded Loss Function (with Kyle Sherbert, Jim Furches, Karunya Shirali, Sophia E. Economou)
+IEEE International Conference on Quantum Computing and Engineering (QCE24)</description>
     </item>
     
     <item>
@@ -27,7 +26,9 @@ IEEE Best Paper Award</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/projects/</guid>
-      <description>NCSU/Nagoya University Data Science Academy Workshop (Instructor, Spring 2024))
+      <description>DOE-ASCR: Achieving Quantum Utility with Hybrid Discrete Continuous Variable Quantum Processors (Co-PI)
+[Press Release]
+NCSU/Nagoya University Data Science Academy Workshop (Instructor, Spring 2024))
 [Press Release]
 Co-Design Center for Quantum Advantage (Deputy Software Thrust Lead)
 [Website]
@@ -35,9 +36,7 @@ NCSU Quantum Workshop: Quantum Simulation (Co-organizer with Dror Baron, Bojko B
 [Website]
 NCSU Quantum Workshop: Quantum Machine Learning (Co-organizer with Dror Baron, Bojko Bakalov)
 [Website]
-PNNL Quantum Computing Bootcamp (Co-organizer with Tobias Hagge, Nathan Wiebe)
-[2022] [2021]
-Discovery via Quantum Neural Networks (Project Lead; Team: Nathan Wiebe)</description>
+PNNL Quantum Computing Bootcamp (Co-organizer with Tobias Hagge, Nathan Wiebe)</description>
     </item>
     
   </channel>
