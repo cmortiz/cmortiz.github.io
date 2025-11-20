@@ -1,5 +1,20 @@
 [
     {
+        "title": "DOE-ASCR: Achieving Quantum Utility with Hybrid Discrete Continuous Variable Quantum Processors",
+        "role": "Institutional PI",
+        "image": "https://research.ncsu.edu/wp-content/blogs.dir/38/files/2024/10/Quantum-DOE-Award-Art-1536x864.jpg",
+        "links": [
+            {
+                "label": "Press Release",
+                "url": "https://research.ncsu.edu/nc-state-to-lead-doe-quantum-computing-research/"
+            },
+            {
+                "label": "Hybridlane",
+                "url": "https://github.com/pnnl/hybridlane"
+            }
+        ]
+    },
+    {
         "title": "NCSU/Nagoya University Data Science Academy Workshop",
         "role": "Instructor, Spring 2024",
         "image": "/img/DSC1679.jpg",
