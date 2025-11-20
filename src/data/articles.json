@@ -34,9 +34,9 @@
     ]
   },
   {
-    "title": "Variational Methods for Computing Non-Local Quantum Strategies",
-    "authors": "with Jim Furches and Nathan Wiebe",
-    "venue": "Submitted",
+    "title": "Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies",
+    "authors": "with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe",
+    "venue": "Expanded Version of \"Variational Methods for Computing NonLocal Quantum Strategies\", Submitted",
     "image": "/img/strategy.png",
     "category": "Quantum Computation and Quantum Information",
     "links": [
@@ -49,7 +49,7 @@
         "url": "https://github.com/jfurches/nonlocalgames"
       },
       {
-        "label": "Poster",
+        "label": "Poster (by Jim Furches)",
         "url": "/img/QIP_2024_Poster.pdf"
       }
     ]
