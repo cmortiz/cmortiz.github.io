@@ -36,10 +36,14 @@
   {
     "title": "Application-level Benchmarking of Quantum Computers using Nonlocal Game Strategies",
     "authors": "with Jim Furches, Sarah Chehade, Kathleen E Hamilton, Nathan Wiebe",
-    "venue": "Expanded Version of \"Variational Methods for Computing NonLocal Quantum Strategies\", Submitted",
+    "venue": "Expanded Version of \"Variational Methods for Computing NonLocal Quantum Strategies\", Quantum Science and Technology",
     "image": "/img/strategy.png",
     "category": "Quantum Computation and Quantum Information",
     "links": [
+      {
+        "label": "Paper",
+        "url": "https://iopscience.iop.org/article/10.1088/2058-9565/adf1c0"
+      },
       {
         "label": "arXiv",
         "url": "https://arxiv.org/abs/2311.01363"
