@@ -1,12 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Card from '../components/Card.astro';
-import articles from '../data/articles.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import articles from "../data/articles.json";
 
 const title = "Articles";
 
-const quantumArticles = articles.filter(a => a.category === "Quantum Computation and Quantum Information");
-const mlArticles = articles.filter(a => a.category === "Data Science and Machine Learning");
+const quantumArticles = articles.filter(
+  (a) => a.category === "Quantum Computation and Quantum Information",
+);
+const mlArticles = articles.filter(
+  (a) => a.category === "Data Science and Machine Learning",
+);
 ---
 
 <BaseLayout title={title}>
@@ -17,32 +21,36 @@ const mlArticles = articles.filter(a => a.category === "Data Science and Machine
   <section class="category-section">
     <h2>Quantum Computation and Quantum Information</h2>
     <div class="grid">
-      {quantumArticles.map((article, index) => (
-        <Card
-          index={index + 1}
-          title={article.title}
-          subtitle={article.authors}
-          details={article.venue}
-          image={article.image}
-          links={article.links}
-        />
-      ))}
+      {
+        quantumArticles.map((article, index) => (
+          <Card
+            index={index + 1}
+            title={article.title}
+            subtitle={article.authors}
+            details={article.venue}
+            image={article.image}
+            links={article.links}
+          />
+        ))
+      }
     </div>
   </section>
 
   <section class="category-section">
     <h2>Data Science and Machine Learning</h2>
     <div class="grid">
-      {mlArticles.map((article, index) => (
-        <Card
-          index={index + 1}
-          title={article.title}
-          subtitle={article.authors}
-          details={article.venue}
-          image={article.image}
-          links={article.links}
-        />
-      ))}
+      {
+        mlArticles.map((article, index) => (
+          <Card
+            index={index + 1}
+            title={article.title}
+            subtitle={article.authors}
+            details={article.venue}
+            image={article.image}
+            links={article.links}
+          />
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
@@ -71,7 +79,22 @@ const mlArticles = articles.filter(a => a.category === "Data Science and Machine
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
+  }
+
+  /* Override container width for this page to allow wider cards */
+  :global(.container) {
+    max-width: 1200px !important;
+  }
+
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    /* Ensure cards aren't too wide on phones by adding margin if needed */
+    :global(.container) {
+      padding: 0 2rem;
+    }
   }
 </style>
