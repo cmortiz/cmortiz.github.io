@@ -12,5 +12,3 @@ National Laboratory**](https://pnnl.gov), and PI at the [**Co-design Center for 
 (C2QA)**](https://www.bnl.gov/quantumcenter/). I am currently working on
 problems related to Quantum Algorithms, Quantum Benchmarking, and Machine Learning. The best way to
 reach me is by email at **carlos.ortiz.marrero@colostate.edu**.
-
-[[**Google Scholar**]](https://scholar.google.com/citations?user=dQNjXX8AAAAJ)
