@@ -1,0 +1,113 @@
+[
+    {
+        "title": "NCSU/Nagoya University Data Science Academy Workshop",
+        "role": "Instructor, Spring 2024",
+        "image": "/img/DSC1679.jpg",
+        "links": [
+            {
+                "label": "Press Release",
+                "url": "https://datascienceacademy.ncsu.edu/2024/04/12/nagoya-workshop/"
+            }
+        ]
+    },
+    {
+        "title": "Co-Design Center for Quantum Advantage",
+        "role": "Deputy Software Thrust Lead",
+        "image": "/img/c2qa-logo-wht.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://www.bnl.gov/quantumcenter/"
+            }
+        ]
+    },
+    {
+        "title": "NCSU Quantum Workshop: Quantum Simulation",
+        "role": "Co-organizer with Dror Baron, Bojko Bakalov, Rebekah Herrman",
+        "image": "/img/quantum_sim.jpg",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://quantum.ncsu.edu/ibm-quantum/workshop/november-2023-workshop/"
+            }
+        ]
+    },
+    {
+        "title": "NCSU Quantum Workshop: Quantum Machine Learning",
+        "role": "Co-organizer with Dror Baron, Bojko Bakalov",
+        "image": "/img/quan_hardw.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://quantum.ncsu.edu/ibm-quantum/workshop/january-2023-workshop/"
+            }
+        ]
+    },
+    {
+        "title": "PNNL Quantum Computing Bootcamp",
+        "role": "Co-organizer with Tobias Hagge, Nathan Wiebe",
+        "image": "/img/PCSD0414_QuantumBootcamp.jpg",
+        "links": [
+            {
+                "label": "2022",
+                "url": "/img/Quantum_Bootcamp_Agenda_2022.pdf"
+            },
+            {
+                "label": "2021",
+                "url": "https://www.pnnl.gov/events/quantum-computing-bootcamp-2021"
+            }
+        ]
+    },
+    {
+        "title": "Discovery via Quantum Neural Networks",
+        "role": "Project Lead; Team: Nathan Wiebe",
+        "image": "/img/NSD_0475_ILLUS_MARSGraphics-Logo2-01.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://www.pnnl.gov/discovery-quantum-neural-networks"
+            }
+        ]
+    },
+    {
+        "title": "State Space Discovery and Data-Driven Modeling of Chemical Systems",
+        "role": "Project Lead; Team: Michael Hughes, Francesco Luzi, Jenna Bilbrey",
+        "image": "/img/cdi_logo.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://www.pnnl.gov/cdi-project-state-space-discovery-and-data-driven-modeling-chemical-systems"
+            }
+        ]
+    },
+    {
+        "title": "Image Compression using Simulated Annealing",
+        "role": "with A. Dutta, G. Kim, M. Lamoureux, M. Li, P. Ronagh, M. Sinha, C. Stiegler",
+        "image": "/img/IMA-math_modeling.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://web.archive.org/web/20220926032703/https://www.ima.umn.edu/2014-2015/MM8.5-14.15/24035"
+            }
+        ]
+    },
+    {
+        "title": "AMS Special Session on Topological Phases of Matter and Quantum Computation",
+        "role": "Co-organizer/editor with Julia Plavnik and Paul Bruilard",
+        "image": "/img/conm-747.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "http://www.ams.org/meetings/sectional/2238_program_ss15.html"
+            },
+            {
+                "label": "Volume",
+                "url": "https://www.ams.org/books/conm/747/"
+            },
+            {
+                "label": "Press Release",
+                "url": "https://www.pnnl.gov/news-media/volume-explores-burgeoning-field-quantum-computing"
+            }
+        ]
+    }
+]

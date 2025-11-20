@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import projects from '../data/projects.json';
+
+const title = "Projects";
+---
+
+<BaseLayout title={title}>
+  <header class="page-header">
+    <h1>{title}</h1>
+  </header>
+
+  <div class="grid">
+    {projects.map((project, index) => (
+      <Card
+        index={index + 1}
+        title={project.title}
+        details={project.role}
+        image={project.image}
+        links={project.links}
+      />
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    color: var(--primary);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

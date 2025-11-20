@@ -1,0 +1,42 @@
+---
+const today = new Date();
+---
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      &copy; {today.getFullYear()} Carlos M. Ortiz Marrero. All rights reserved.
+    </p>
+    <div class="social-links">
+      <a href="mailto:carlos.ortizmarrero@pnnl.gov" target="_blank">Email</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=CCElNRAAAAAJ" target="_blank">Google Scholar</a>
+      <a href="https://github.com/cmortiz" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--bg2);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    color: var(--text-muted);
+  }
+
+  .social-links a:hover {
+    color: var(--primary);
+  }
+</style>

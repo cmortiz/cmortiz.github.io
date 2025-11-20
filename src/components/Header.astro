@@ -1,0 +1,66 @@
+---
+const navItems = [
+  { href: '/', label: 'About' },
+  { href: '/articles', label: 'Articles' },
+  { href: '/projects', label: 'Projects' },
+];
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      Carlos M. Ortiz Marrero
+    </a>
+    <nav>
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--bg2);
+    margin-bottom: 2rem;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--fg0);
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem;
+  }
+
+  .nav-list a {
+    color: var(--fg4);
+    font-weight: 600;
+  }
+
+  .nav-list a:hover,
+  .nav-list a.active {
+    color: var(--primary);
+  }
+</style>

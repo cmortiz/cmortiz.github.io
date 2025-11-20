@@ -1,0 +1,407 @@
+[
+  {
+    "title": "Hybrid continuous-discrete-variable quantum computing: a guide to utility",
+    "authors": "with Ulysse Chabaud et al.",
+    "venue": "Submitted",
+    "image": "/img/hybrid_cv_dv_system.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2511.13882"
+      }
+    ]
+  },
+  {
+    "title": "Adaptive Quantum Generative Training using an Unbounded Loss Function",
+    "authors": "with Kyle Sherbert et al.",
+    "venue": "IEEE International Conference on Quantum Computing and Engineering (QCE24) - IEEE Best Paper Award",
+    "image": "/img/firststeps_range.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://ieeexplore.ieee.org/abstract/document/10821301"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2408.00218"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/kmsherbertvt/RenyiADAPT"
+      }
+    ]
+  },
+  {
+    "title": "Variational Methods for Computing Non-Local Quantum Strategies",
+    "authors": "with Jim Furches and Nathan Wiebe",
+    "venue": "Submitted",
+    "image": "/img/strategy.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2311.01363"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/jfurches/nonlocalgames"
+      },
+      {
+        "label": "Poster",
+        "url": "/img/QIP_2024_Poster.pdf"
+      }
+    ]
+  },
+  {
+    "title": "A Lie Algebraic Theory of Barren Plateaus for Deep Parameterized Quantum Circuits",
+    "authors": "with Michael Ragone et al.",
+    "venue": "Nature Communications",
+    "image": "/img/unify_bp.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.nature.com/articles/s41467-024-49909-3"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2309.09342"
+      },
+      {
+        "label": "Press Release",
+        "url": "https://www.pnnl.gov/publications/unified-mathematical-theory-barren-plateaus"
+      }
+    ]
+  },
+  {
+    "title": "Generating Approximate Ground States of Molecules Using Quantum Machine Learning",
+    "authors": "with Jack Ceroni et al.",
+    "venue": "Submitted",
+    "image": "/img/hybrid.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2210.05489"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/XanaduAI/generative_qml_qchem"
+      }
+    ]
+  },
+  {
+    "title": "Quantum Generative Training using Rényi Divergences",
+    "authors": "with Mária Kieferová and Nathan Wiebe",
+    "venue": "Submitted",
+    "image": "/img/gt_hidden_loss_vis_4_samples_50.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2106.09567"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/pnnl/renyiqnets"
+      }
+    ]
+  },
+  {
+    "title": "Entanglement Induced Barren Plateaus",
+    "authors": "with Mária Kieferová and Nathan Wiebe",
+    "venue": "PRX Quantum",
+    "image": "/img/uqnn.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.2.040316"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2010.15968"
+      },
+      {
+        "label": "Poster",
+        "url": "https://www.mariakieferova.com/s/Poster.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Classification of Rank 5 Premodular Categories",
+    "authors": "with Paul Bruilard",
+    "venue": "Journal of Mathematical Physics",
+    "image": "/img/quantum_categories.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1063/1.5020256"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1612.08769"
+      },
+      {
+        "label": "Slides",
+        "url": "/img/Carlos-JMM_2017.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Quantum Graph Homomorphisms via Operator Systems",
+    "authors": "with Vern Paulsen",
+    "venue": "Linear Algebra and its Applications",
+    "image": "/img/quantum_games.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "http://dx.doi.org/10.1016/j.laa.2016.02.019"
+      },
+      {
+        "label": "arXiv",
+        "url": "http://arxiv.org/abs/1505.00483"
+      },
+      {
+        "label": "Slides (Barcelona)",
+        "url": "/img/Carlos-Barcelona.pdf"
+      },
+      {
+        "label": "Slides (JMM)",
+        "url": "/img/Carlos-JMM_2016.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Lovász Theta Type Norms and Operator Systems",
+    "authors": "with Vern Paulsen",
+    "venue": "Linear Algebra and its Applications",
+    "image": "/img/non-comm_banner.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "http://dx.doi.org/10.1016/j.laa.2015.03.022"
+      },
+      {
+        "label": "arXiv",
+        "url": "http://arxiv.org/abs/1412.7101"
+      },
+      {
+        "label": "Slides",
+        "url": "/img/Carlos-JMM_2015.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Using Skew to Assess the Quality of GAN-generated Image Features",
+    "authors": "with Lorenzo Luzi et al.",
+    "venue": "Transactions on Machine Learning Research",
+    "image": "/img/dogs.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openreview.net/pdf?id=Io3jDUC4DP"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2310.20636"
+      }
+    ]
+  },
+  {
+    "title": "Seven Open Problems in Applied Combinatorics",
+    "authors": "with Sinan G. Aksoy et al.",
+    "venue": "Journal of Combinatorics",
+    "image": "/img/fix_jacobi_ensambles.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.intlpress.com/site/pub/files/_fulltext/journals/joc/2023/0014/0004/JOC-2023-0014-0004-a008.pdf"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2303.11464"
+      }
+    ]
+  },
+  {
+    "title": "The SVD of Convolutional Weights: A CNN Interpretability Framework",
+    "authors": "with Brenda Praggastis et al.",
+    "venue": "Submitted",
+    "image": "/img/rmt.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2208.06894"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/pnnl/DeepDataProfiler"
+      }
+    ]
+  },
+  {
+    "title": "Evaluating generative networks using Gaussian mixtures of image features",
+    "authors": "with Lorenzo Luzi et al.",
+    "venue": "WACV 2023",
+    "image": "/img/imgnet.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://openaccess.thecvf.com/content/WACV2023/html/Luzi_Evaluating_Generative_Networks_Using_Gaussian_Mixtures_of_Image_Features_WACV_2023_paper.html"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2110.05240"
+      },
+      {
+        "label": "Poster",
+        "url": "/img/1098-wacv-post.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Modeling Atmospheric Data and Identifying Dynamics: Temporal Data-Driven Modeling of Air Pollutants",
+    "authors": "with Javier Rubio-Herrero and Louis Fan",
+    "venue": "Journal of Cleaner Production",
+    "image": "/img/phase_diagram.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0959652621040324"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2010.06538"
+      },
+      {
+        "label": "Poster",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0959652621040324-ga1_lrg.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Application of entropy and signal energy for ultrasound-based classification of three-dimensional printed polyetherketoneketone components",
+    "authors": "with Francesco Luzi et al.",
+    "venue": "The Journal of the Acoustical Society of America",
+    "image": "/img/dogbone.jpeg",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1121/10.0001581"
+      }
+    ]
+  },
+  {
+    "title": "Tracking the Chemical Evolution of Iodine Species Using Recurrent Neural Networks",
+    "authors": "with Jenna Bilbrey et al.",
+    "venue": "ACS Omega",
+    "image": "https://www.pnnl.gov/sites/default/files/styles/hero_1600x1200/public/media/image/WEB_NuclearClues-Hero-01_0.jpg",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1021/acsomega.9b04104"
+      },
+      {
+        "label": "Press Release",
+        "url": "https://www.pnnl.gov/news-media/tracking-neural-networks-nuclear-clues"
+      }
+    ]
+  },
+  {
+    "title": "Robust Assessment of Real-World Adversarial Examples",
+    "authors": "with Brett Jefferson",
+    "venue": "CVPR 2020 Workshop on Adversarial Machine Learning in Computer Vision",
+    "image": "/img/gif_model.gif",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1109/CVPRW50498.2020.00404"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1911.10435"
+      },
+      {
+        "label": "Talk",
+        "url": "/img/36-poster.mp4"
+      },
+      {
+        "label": "Slides",
+        "url": "/img/36-slides.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Hypernetwork Science via High-Order Hypergraph Walks",
+    "authors": "with Sinan Aksoy et al.",
+    "venue": "EPJ Data Science",
+    "image": "/img/hypernet.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1140/epjds/s13688-020-00231-0"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1906.11295"
+      }
+    ]
+  },
+  {
+    "title": "Physics‐Informed Deep Neural Networks for Learning Parameters and Constitutive Relationships in Subsurface Flow Problems",
+    "authors": "with Alexandre Tartakovsky et al.",
+    "venue": "Water Resources Research",
+    "image": "/img/PINNs.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://doi.org/10.1029/2019WR026731"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1808.03398"
+      },
+      {
+        "label": "Slides",
+        "url": "/img/cdi_indiana_2019.pdf"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/paraklas/DarcyNets"
+      }
+    ]
+  },
+  {
+    "title": "On the structure of isometrically embeddable metric spaces",
+    "authors": "with Stephen Young and Kathleen Nowak",
+    "venue": "Electronic Journal of Linear Algebra",
+    "image": "/img/iso_em.png",
+    "category": "Data Science and Machine Learning",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://journals.uwyo.edu/index.php/ela/article/view/6891"
+      },
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/1808.10509"
+      }
+    ]
+  }
+]
