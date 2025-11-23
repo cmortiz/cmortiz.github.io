@@ -1,5 +1,16 @@
 [
     {
+        "title": "Qupacabras-DB: A Community Database for Quantum Experiments",
+        "role": "Project Lead",
+        "image": "/img/qupacabras-db.gif",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://qupacabras-db.diy/"
+            }
+        ]
+    },
+    {
         "title": "DOE-ASCR: Achieving Quantum Utility with Hybrid Discrete Continuous Variable Quantum Processors",
         "role": "Institutional PI",
         "image": "https://research.ncsu.edu/wp-content/blogs.dir/38/files/2024/10/Quantum-DOE-Award-Art-1536x864.jpg",
