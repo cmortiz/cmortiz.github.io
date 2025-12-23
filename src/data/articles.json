@@ -1,5 +1,18 @@
 [
   {
+    "title": "Classical and Quantum Algorithms for Topological Invariants of Torus Bundles",
+    "authors": "with Nelson Abdiel Colón Vargas",
+    "venue": "Submitted",
+    "image": "/img/torus.gif",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2512.19028"
+      }
+    ]
+  },
+  {
     "title": "Hybrid continuous-discrete-variable quantum computing: a guide to utility",
     "authors": "with Lex Kemper et al.",
     "venue": "Submitted",
