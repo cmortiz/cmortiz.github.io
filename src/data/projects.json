@@ -1,5 +1,16 @@
 [
     {
+        "title": "DOE-HEP: VEBAX - Very Entangled Bose Array eXperiment",
+        "role": "Institutional PI (DE-FOA-0003354)",
+        "image": "https://www.pnnl.gov/sites/default/files/media/image/gallery_insert_out_of_magnet.jpg",
+        "links": [
+            {
+                "label": "Announcement",
+                "url": "https://science.osti.gov/-/media/funding/pdf/Awards-Lists/2025/QuantISED-20-Awards-List-Spreadsheet.pdf"
+            }
+        ]
+    },
+    {
         "title": "Qupacabras-DB: A Community Database for Quantum Experiments",
         "role": "Project Lead",
         "image": "/img/qupacabras-db.gif",
