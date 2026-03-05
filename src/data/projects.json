@@ -1,7 +1,7 @@
 [
     {
         "title": "DOE-HEP: VEBAX - Very Entangled Bose Array eXperiment",
-        "role": "Institutional PI (DE-FOA-0003354)",
+        "role": "Joint Appointee (DE-FOA-0003354)",
         "image": "https://www.pnnl.gov/sites/default/files/media/image/gallery_insert_out_of_magnet.jpg",
         "links": [
             {
@@ -23,7 +23,7 @@
     },
     {
         "title": "DOE-ASCR: Achieving Quantum Utility with Hybrid Discrete Continuous Variable Quantum Processors",
-        "role": "Institutional PI",
+        "role": "Joint Appointee",
         "image": "https://research.ncsu.edu/wp-content/blogs.dir/38/files/2024/10/Quantum-DOE-Award-Art-1536x864.jpg",
         "links": [
             {
@@ -49,7 +49,7 @@
     },
     {
         "title": "Co-Design Center for Quantum Advantage",
-        "role": "Deputy Software Thrust Lead",
+        "role": "PI (Deputy Software Thrust Lead, 2022-2025)",
         "image": "/img/c2qa-logo-wht.png",
         "links": [
             {
