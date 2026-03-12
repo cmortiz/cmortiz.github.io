@@ -1,5 +1,22 @@
 [
   {
+    "title": "Hybridlane: A Software Development Kit for Hybrid Continuous-Discrete Variable Quantum Computing",
+    "authors": "with Jim Furches and Timothy J. Stavenger",
+    "venue": "Submitted",
+    "image": "/img/hybridlane_overview.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2603.10919"
+      },
+      {
+        "label": "Repo",
+        "url": "https://github.com/pnnl/hybridlane"
+      }
+    ]
+  },
+  {
     "title": "Classical and Quantum Algorithms for Topological Invariants of Torus Bundles",
     "authors": "with Nelson Abdiel Colón Vargas",
     "venue": "Submitted",
