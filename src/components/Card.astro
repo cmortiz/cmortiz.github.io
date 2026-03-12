@@ -14,12 +14,17 @@ interface Props {
 }
 
 const { title, subtitle, details, image, links, index } = Astro.props;
+const lightboxId = image
+  ? `lb-${image.replace(/[^a-zA-Z0-9]/g, '-').replace(/-+/g, '-')}`
+  : '';
 ---
 
 <div class="card">
   {image && (
     <div class="card-image">
-      <img src={image} alt={title} />
+      <a href={`#${lightboxId}`} class="card-image-link">
+        <img src={image} alt={title} />
+      </a>
     </div>
   )}
   <div class="card-content">
@@ -40,6 +45,14 @@ const { title, subtitle, details, image, links, index } = Astro.props;
     )}
   </div>
 </div>
+
+{image && (
+  <div id={lightboxId} class="lightbox">
+    <a href="#!" class="lightbox-overlay" aria-label="Close"></a>
+    <img src={image} alt={title} class="lightbox-img" />
+    <a href="#!" class="lightbox-close" aria-label="Close">&times;</a>
+  </div>
+)}
 
 <style>
   .card {
@@ -129,5 +142,70 @@ const { title, subtitle, details, image, links, index } = Astro.props;
 
   .card-link:hover {
     color: var(--accent-green);
+  }
+
+  .card-image-link {
+    display: contents;
+    cursor: zoom-in;
+    border-bottom: none;
+  }
+
+  .card-image-link:hover {
+    border-bottom: none;
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox:target {
+    display: flex;
+  }
+
+  .lightbox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: none;
+  }
+
+  .lightbox-overlay:hover {
+    border-bottom: none;
+  }
+
+  .lightbox-img {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: var(--fg1);
+    line-height: 1;
+    border-bottom: none;
+    z-index: 1;
+  }
+
+  .lightbox-close:hover {
+    color: var(--primary);
+    border-bottom: none;
   }
 </style>
