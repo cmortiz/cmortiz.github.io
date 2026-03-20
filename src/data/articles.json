@@ -1,5 +1,18 @@
 [
   {
+    "title": "Nonlocal Games as Cross-Platform Quantum Benchmarks: Exceeding unconditional classical bounds on trapped-ion processors",
+    "authors": "with Anton T. Than, Jim Furches, Norbert M. Linke et al.",
+    "venue": "Submitted",
+    "image": "/img/ion_trap_results_bar.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2603.18323"
+      }
+    ]
+  },
+  {
     "title": "Hybridlane: A Software Development Kit for Hybrid Continuous-Discrete Variable Quantum Computing",
     "authors": "with Jim Furches and Timothy J. Stavenger",
     "venue": "Submitted",
