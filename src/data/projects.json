@@ -1,5 +1,16 @@
 [
     {
+        "title": "ASPLOS 2026 Tutorial: Hybrid Oscillator-Qubit Quantum Processors",
+        "role": "Co-organizer with Yuan Liu, Eddy Z. Zhang, Huiyang Zhou, Jim Furches",
+        "image": "https://www.asplos-conference.org/wp-content/uploads/2025/05/cropped-logo-2026-clear-1536x209.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://cvdv.ncsu.edu/resources/asplos-tutorial/"
+            }
+        ]
+    },
+    {
         "title": "DOE-HEP: VEBAX - Very Entangled Bose Array eXperiment",
         "role": "Joint Appointee (DE-FOA-0003354)",
         "image": "https://www.pnnl.gov/sites/default/files/media/image/gallery_insert_out_of_magnet.jpg",
