@@ -1,5 +1,18 @@
 [
   {
+    "title": "Encoded Quantum Signal Processing for Heisenberg-Limited Metrology",
+    "authors": "with Rui Jie Tang and Nathan Wiebe",
+    "venue": "Submitted",
+    "image": "/img/fig1_error_detection.png",
+    "category": "Quantum Computation and Quantum Information",
+    "links": [
+      {
+        "label": "arXiv",
+        "url": "https://arxiv.org/abs/2603.22798"
+      }
+    ]
+  },
+  {
     "title": "Nonlocal Games as Cross-Platform Quantum Benchmarks: Exceeding unconditional classical bounds on trapped-ion processors",
     "authors": "with Anton T. Than, Jim Furches, Norbert M. Linke et al.",
     "venue": "Submitted",
