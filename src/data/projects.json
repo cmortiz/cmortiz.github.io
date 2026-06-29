@@ -1,5 +1,16 @@
 [
     {
+        "title": "Qupacabrathon 2026: Quantum Computing Hackathon",
+        "role": "Lead Organizer; with Leo Rodolico, Jim Furches",
+        "image": "/img/qupacabrathon.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://qupacabrathon.diy/"
+            }
+        ]
+    },
+    {
         "title": "ASPLOS 2026 Tutorial: Hybrid Oscillator-Qubit Quantum Processors",
         "role": "Co-organizer with Yuan Liu, Eddy Z. Zhang, Huiyang Zhou, Jim Furches",
         "image": "https://www.asplos-conference.org/wp-content/uploads/2025/05/cropped-logo-2026-clear-1536x209.png",
