@@ -1,8 +1,9 @@
 ---
-const navItems = [
+const navItems: { href: string; label: string; external?: boolean }[] = [
   { href: "/", label: "About" },
   { href: "/articles", label: "Articles" },
   { href: "/projects", label: "Projects" },
+  { href: "https://qupacabras.dev/", label: "Lab", external: true },
 ];
 ---
 
@@ -16,6 +17,8 @@ const navItems = [
             <li>
               <a
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 class={
                   Astro.url.pathname === item.href ||
                   Astro.url.pathname === item.href + "/"
