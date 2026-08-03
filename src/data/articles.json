@@ -13,6 +13,10 @@
       {
         "label": "Repo",
         "url": "https://github.com/cmortiz/heisenberg-qed-metrology"
+      },
+      {
+        "label": "Talk",
+        "url": "/talks/usclivar-2026/"
       }
     ]
   },
