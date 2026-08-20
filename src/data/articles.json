@@ -15,8 +15,12 @@
         "url": "https://github.com/cmortiz/heisenberg-qed-metrology"
       },
       {
-        "label": "Talk",
+        "label": "Talk (US CLIVAR)",
         "url": "/talks/usclivar-2026/"
+      },
+      {
+        "label": "Talk (IEEE High Plains)",
+        "url": "/talks/ieee-highplains-2026/"
       }
     ]
   },
