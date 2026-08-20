@@ -2049,9 +2049,15 @@ function overflowOf(root) {
   for (const el of root.querySelectorAll('*')) {
     if (el.tagName === 'CANVAS') continue;
     const cs = getComputedStyle(el);
-    if (!/auto|scroll/.test(cs.overflow + cs.overflowY + cs.overflowX)) continue;
-    d = Math.max(d, el.scrollHeight - el.clientHeight,
-                    el.scrollWidth  - el.clientWidth);
+    // Per axis, because the two can disagree: core index.css gives
+    // .katex-display overflow-x auto with overflow-y hidden, and KaTeX's
+    // struts leave ~5px of scrollHeight slack on any \tfrac or \sqrt display
+    // at every type size. Counting the hidden axis walked every slide with
+    // such an equation straight to FIT_MIN regardless of viewport.
+    if (/auto|scroll/.test(cs.overflowY))
+      d = Math.max(d, el.scrollHeight - el.clientHeight);
+    if (/auto|scroll/.test(cs.overflowX))
+      d = Math.max(d, el.scrollWidth - el.clientWidth);
   }
   return d;
 }
@@ -2138,10 +2144,10 @@ html, body { font-size: clamp(17px, 2.3vh, 30px); }
   font-size: calc(clamp(18px, 2.75vh, 36px) * var(--fit));
   max-width: none;
 }
-#narrative-body p { margin: 0 0 clamp(10px, 1.4vh, 20px); }
-#narrative-body .cb { margin: clamp(8px, 1.3vh, 18px) 0; padding: clamp(9px, 1.2vh, 16px) clamp(12px, 1.1vw, 20px); }
+#narrative-body p { margin: 0 0 clamp(8px, 1.1vh, 16px); }
+#narrative-body .cb { margin: clamp(6px, 1.0vh, 14px) 0; padding: clamp(8px, 1.0vh, 13px) clamp(11px, 1.0vw, 18px); }
 #narrative-body .cb.cb-plain { padding: 2px 0; }
-#narrative-body .cb-hard { padding: clamp(11px, 1.5vh, 20px) clamp(14px, 1.3vw, 24px); }
+#narrative-body .cb-hard { padding: clamp(9px, 1.2vh, 16px) clamp(12px, 1.1vw, 20px); }
 #narrative-body .tag, #narrative-body p.tag { font-size: 0.8em; }
 #topbar { font-size: clamp(12px, 1.35vh, 19px); }
 #bottombar { font-size: clamp(11px, 1.2vh, 17px); }
@@ -2177,7 +2183,7 @@ html, body { font-size: clamp(17px, 2.3vh, 30px); }
 /* Display math sat in ~35 px of its own margin at 1080p, which is the largest
    block of dead space in the narrative column. Tightened, because the room
    reads the equation, not the air around it. */
-#narrative-body .katex-display { margin: clamp(8px, 1.15vh, 16px) 0; }
+#narrative-body .katex-display { margin: clamp(7px, 1vh, 13px) 0; }
 
 /* Below about 900 CSS px of height the narrative runs out of vertical room
    before it runs out of horizontal room, so the fit has to come from spacing
@@ -2190,10 +2196,10 @@ html, body { font-size: clamp(17px, 2.3vh, 30px); }
   #narrative { padding: clamp(16px, 2.2vh, 30px) clamp(24px, 2.6vw, 44px); }
   #narrative h1 { font-size: calc(clamp(25px, 4.7vh, 50px) * var(--fit)); margin-bottom: clamp(10px, 1.6vh, 18px); }
   #narrative-body { font-size: calc(clamp(16px, 2.55vh, 30px) * var(--fit)); }
-  #narrative-body p { margin: 0 0 clamp(8px, 1.1vh, 14px); }
-  #narrative-body .cb { margin: clamp(6px, 0.9vh, 12px) 0; padding: clamp(7px, 1vh, 13px) clamp(11px, 1vw, 17px); }
-  #narrative-body .cb-hard { padding: clamp(9px, 1.2vh, 15px) clamp(12px, 1.1vw, 19px); }
-  #narrative-body .katex-display { margin: clamp(7px, 1.2vh, 15px) 0; }
+  #narrative-body p { margin: 0 0 clamp(6px, 0.8vh, 10px); }
+  #narrative-body .cb { margin: clamp(4px, 0.7vh, 9px) 0; padding: clamp(5px, 0.8vh, 11px) clamp(10px, 1vw, 15px); }
+  #narrative-body .cb-hard { padding: clamp(7px, 1vh, 13px) clamp(11px, 1vw, 17px); }
+  #narrative-body .katex-display { margin: clamp(5px, 0.9vh, 12px) 0; }
 }
 /* The 1024x768 tier. Everything here is spacing, deliberately: the type stays
    at ~19.6 px because this is already the smallest screen the deck runs on and
@@ -5019,12 +5025,16 @@ registerViz('phase-circle', PhaseCircle);
 
 </script>
 <script>
-// slides.js — IEEE High Plains section talk, 24 slides (23 presented, 1
+// slides.js — IEEE High Plains section talk, 25 slides (24 presented, 1
 // backup). Built from the US CLIVAR deck on 2026-08-20; see README.md.
+// Revised same day after a first pass: result-first hook, a new
+// what-makes-quantum-different slide in Act 1, prose trims on the four
+// smallest-rendering slides, and a rewritten LIGO squeezing box.
 //
-// Arc: hook -> quantum 101 (superposition, phase, entanglement, statistics)
-// -> sensing tour (clocks/GPS, LIGO, gravimeter) -> SQL vs Heisenberg ->
-// prior protocols -> our protocol -> near-term pathway -> Qupacabrathon.
+// Arc: hook -> quantum 101 (superposition, the 2^n space, phase,
+// entanglement, statistics) -> sensing tour (clocks/GPS, LIGO, gravimeter)
+// -> SQL vs Heisenberg -> prior protocols -> our protocol -> near-term
+// pathway -> Qupacabrathon.
 //
 // Audience is IEEE section members, most of them new to quantum; the
 // organizers asked for a short introduction to quantum theory and
@@ -5061,13 +5071,13 @@ window.SLIDES = [
              alt="Colorado State University">
       </div>
       <div class="cb cb-soft cb-blue">
-        <p>Quantum computers get the headlines. Quantum <em>measurement</em> is
-        where the same physics pays off first: sensors that read the world
-        through single atoms already keep GPS on time, and better ones are
-        coming.</p>
-        <p>The plan tonight: the quantum rules in plain terms, a tour of the
-        sensors they already power, and then a result of ours, a cheap way to
-        keep the quantum advantage when errors strike.</p>
+        <p>Entangled probes promise a quadratic precision gain: $N$ atoms
+        sharing one quantum state can outperform $N$ atoms measured
+        separately. Decoherence, the noise that breaks such states, takes the
+        gain back, and full error correction needs hardware a deployable
+        sensor will not have.</p>
+        <p>Our result is a cheaper way to keep the gain: detect the errors and
+        let the estimator account for them, without touching the probe.</p>
       </div>
       <p class="tag">IEEE High Plains Section · Colorado State University,
       Fort Collins · August 20, 2026</p>
@@ -5113,22 +5123,58 @@ window.SLIDES = [
   },
 
   {
+    id: 'quantum-different',
+    category: 'Act 1 · Quantum 101',
+    title: 'What makes quantum different',
+    narrative: `
+      <div class="cb cb-soft cb-blue">
+        <p class="cb-title cb-blue">One more qubit doubles the space</p>
+        <p>$n$ qubits carry $2^{n}$ amplitudes at once. Feynman: simulating
+        $n$ spins costs $2^{n}$ classical numbers.</p>
+      </div>
+      <div class="cb cb-soft cb-yellow">
+        <p class="cb-title cb-yellow">Amplitudes interfere like waves</p>
+        <p>Computation choreographs them so wrong answers cancel and right
+        ones add.</p>
+      </div>
+      <div class="cb cb-hard cb-green">
+        <p class="cb-title cb-green">Superposition + interference, in a space
+        too big to write down: that is the whole quantum advantage.</p>
+        <p>Sensing plays the same game with one phase instead of $2^{n}$
+        amplitudes.</p>
+      </div>
+    `,
+    viz: 'fact-card',
+    vizParams: {
+      title: 'The doubling, written out',
+      facts: [
+        { value: '$1 \\to 2 \\to 4 \\to \\cdots \\to 2^{n}$', color: 'blue',
+          label: 'amplitudes held at once by $1, 2, 3, \\ldots, n$ qubits; every added qubit doubles the count' },
+        // 2^300 = 2.037e90 (91 decimal digits), verified by direct computation
+        // in Python on 2026-08-20. Arithmetic, not a quoted figure.
+        { value: '$2^{300} \\approx 2\\times10^{90}$', color: 'purple',
+          label: 'the count at 300 qubits: a 91-digit number of amplitudes, from a register of 300 physical objects' },
+      ],
+      footer: 'The size alone is storage, not advantage. Interference is what cashes it in, and the next slide is about the dial it turns on: phase.',
+    },
+  },
+
+  {
     id: 'phase-101',
     category: 'Act 1 · Quantum 101',
     title: 'Phase: the dial a qubit carries',
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">Amplitudes are arrows</p>
-        <p>An amplitude has a size <em>and an angle</em>. The angle is the
-        phase, and an equal superposition can point its $\\ket{1}$ branch
-        anywhere on a circle:</p>
+        <p>An amplitude has a size <em>and an angle</em>: the phase. The
+        $\\ket{1}$ branch can point anywhere on a circle:</p>
         <p>$$ \\tfrac{1}{\\sqrt{2}}\\left(\\ket{0} + e^{i\\phi}\\ket{1}\\right). $$</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">Measurement alone cannot see it</p>
-        <p>That state answers 0 or 1 with probability $\\tfrac{1}{2}$ each,
-        <em>whatever</em> $\\phi$ is. The phase stays invisible until the two
-        branches are brought back together and interfere.</p>
+        <p>This state answers 0 or 1 with probability $\\tfrac{1}{2}$ each,
+        <em>whatever</em> $\\phi$ is, until the branches recombine and
+        interfere.</p>
       </div>
       <div class="cb cb-hard cb-aqua center">
         <p class="cb-title cb-aqua">Interference turns phase into probabilities.</p>
@@ -5152,20 +5198,19 @@ window.SLIDES = [
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">A state the parts do not have</p>
-        <p>Two qubits can be prepared so that neither has a definite state of
-        its own. Only the pair does:</p>
+        <p>Two qubits can be prepared so that neither has a state of its own.
+        Only the pair does:</p>
         <p>$$ \\tfrac{1}{\\sqrt{2}}\\left(\\ket{00} + \\ket{11}\\right). $$</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">Measure one and both answer</p>
-        <p>Each qubit alone reads out as a fair coin. Read both, and the
-        answers always agree. The randomness is shared, not transmitted.</p>
+        <p>Each qubit alone is a fair coin. Read both, and the answers always
+        agree. The randomness is shared, not transmitted.</p>
       </div>
       <div class="cb cb-hard cb-green">
         <p class="cb-title cb-green">For sensing, entanglement is a resource</p>
-        <p>$N$ entangled atoms can respond to a signal as a single object,
-        $N$ times more strongly. The second half of the talk is built on
-        exactly this.</p>
+        <p>$N$ entangled atoms can respond to a signal as one object, $N$
+        times more strongly. The second half of the talk builds on this.</p>
       </div>
     `,
     viz: 'fact-card',
@@ -5254,31 +5299,31 @@ window.SLIDES = [
   {
     id: 'ligo-tour',
     category: 'Act 2 · Sensing tour',
-    title: 'LIGO: catching a single flash of phase',
+    title: 'LIGO: one flash of phase',
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">The most sensitive phase meter ever built</p>
-        <p>Light runs down two 4 km arms and recombines. A passing
-        gravitational wave stretches one arm and squeezes the other, shifting
-        the two branches out of step: the first detection was a strain of
-        $10^{-21}$, an optical phase of order $10^{-11}$ radians.</p>
+        <p>Light runs down two 4 km arms and recombines. A gravitational
+        wave stretches one arm and squeezes the other: the first detection
+        was a strain of $10^{-21}$, a phase of order $10^{-11}$ radians.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">One transient, one chance</p>
-        <p>A black-hole merger sweeps past once, in a fraction of a second.
-        There is no rerunning the event: the detector has to catch a single
-        waveform against its noise floor.</p>
+        <p>A black-hole merger sweeps past once: one waveform, caught
+        against the noise floor.</p>
       </div>
       <div class="cb cb-soft cb-aqua">
         <p class="cb-title cb-aqua">Where quantum enters here</p>
-        <p>LIGO injects <em>squeezed light</em>, engineered so its quantum
-        noise sits below that of ordinary laser light: a lower noise floor
-        under a one-shot signal. The other quantum game, repeating shots and
-        playing statistics, belongs to the next instrument.</p>
+        <p>The detector reads phase as brightness at the output port, and
+        light arrives as discrete photons at random times, so the reading
+        flickers even with a perfect laser: shot noise. <em>Squeezed
+        light</em> is laser light prepared so that flicker is smaller than
+        ordinary light allows, which lowers the floor under a signal that
+        passes only once.</p>
       </div>
-      <p class="tag">Strain and arms: Abbott et al., Phys. Rev. Lett.
-      <strong>116</strong>, 061102 (2016). Squeezing in observing runs: Tse et
-      al., Phys. Rev. Lett. <strong>123</strong>, 231107 (2019).</p>
+      <p class="tag">Strain: Abbott et al., Phys. Rev. Lett.
+      <strong>116</strong>, 061102 (2016); squeezing: Tse et al., Phys. Rev.
+      Lett. <strong>123</strong>, 231107 (2019).</p>
     `,
     viz: 'interferometer',
   },
@@ -5453,9 +5498,9 @@ window.SLIDES = [
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">Put a number on it</p>
-        <p>Target 1 µGal, which is $10\\ \\mathrm{nm/s^{2}}$. For rubidium-87 on the D2
-        line with counter-propagating Raman beams,
-        $k_{\\mathrm{eff}} = 1.611\\times10^{7}\\ \\mathrm{m^{-1}}$. At $T = 100$ ms:</p>
+        <p>Target 1 µGal $= 10\\ \\mathrm{nm/s^{2}}$. Rubidium-87,
+        counter-propagating Raman beams:
+        $k_{\\mathrm{eff}} = 1.611\\times10^{7}\\ \\mathrm{m^{-1}}$, $T = 100$ ms.</p>
         <p>$$ \\sigma_{\\phi} \\;=\\; k_{\\mathrm{eff}}\\,T^{2}\\,\\sigma_{g}
            \\;=\\; 1.61\\ \\mathrm{mrad}. $$</p>
       </div>
@@ -5477,16 +5522,15 @@ window.SLIDES = [
     title: 'The Heisenberg limit: same measurement, 620 times cheaper',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Entangle the probes: Act 1's GHZ state, at work</p>
+        <p class="cb-title cb-blue">Act 1's GHZ state, at work</p>
         <p>$$ \\ket{\\mathrm{GHZ}_{N}} = \\tfrac{\\ket{0\\cdots0}+\\ket{1\\cdots1}}{\\sqrt{2}}
            \\;\\xrightarrow{\\ \\text{gravity}\\ }\\;
            \\tfrac{\\ket{0\\cdots0}+e^{iN\\Delta\\phi}\\ket{1\\cdots1}}{\\sqrt{2}} $$</p>
       </div>
       <div class="cb cb-soft cb-aqua">
-        <p><strong>$N$ independent probes:</strong> each sees $\\Delta\\phi$, averaging
-        gives $1/\\sqrt{N}$.</p>
-        <p><strong>One GHZ probe:</strong> sees $N\\Delta\\phi$ coherently, readout gives
-        $1/N$.</p>
+        <p><strong>$N$ independent probes:</strong> average to $1/\\sqrt{N}$.</p>
+        <p><strong>One GHZ probe:</strong> sees $N\\Delta\\phi$ coherently, reads
+        out at $1/N$.</p>
       </div>
       <div class="cb cb-hard cb-green center">
         <p class="cb-title cb-green">Same 1 µGal, same 1.61 mrad</p>
