@@ -1198,6 +1198,12 @@ window.Engine = Engine;
 //
 //   AtomMZ and GhzFragility are new for this talk.
 //
+//   Third revision (2026-08-20 evening): ClassicalRepetition / ErrorRatePlot /
+//   FailedCloner are copied from decks/lecture-qec-bit-flip/viz.js and
+//   SGateExample from decks/qpe/viz.js; WaveInterference is ported from the
+//   archived React lecture 10. All five sit in the section at the end of this
+//   file, with per-class provenance notes.
+//
 // Palette keys (read via this.palette; never hard-code hex):
 //   bg, bgHard, bgSoft, fg, fg0, red, green, yellow, blue, purple, aqua,
 //   orange, gray
@@ -5023,25 +5029,887 @@ class PhaseCircle extends BaseViz {
 }
 registerViz('phase-circle', PhaseCircle);
 
+
+// ###########################################################################
+// Third-revision ports (2026-08-20, evening): the QC-intro / QEC-intro
+// restructure. Three classes are copied from
+// decks/lecture-qec-bit-flip/viz.js (ClassicalRepetition, ErrorRatePlot,
+// FailedCloner) and one from decks/qpe/viz.js (SGateExample), verbatim except
+// where a comment says otherwise: the palette-token and design-box contracts
+// are shared, so the drawing code lands unchanged. WaveInterference is a port
+// of the canvas code inside the archived React lecture
+// (slides/archive/src-react-jsx/lecture10-interference-quantum-power.jsx);
+// the React wrapper became controls()/bindControls() and the per-frame
+// increments became wall-clock t. Course copies are copies, never edits in
+// place: the class repo is untouched.
+// ###########################################################################
+
+// ===========================================================================
+// ClassicalRepetition — canvas walkthrough of the classical 3-bit repetition
+//   code. Stages: 0 raw bit, 1 encoded, 2 noise applied, 3 majority decoded.
+//   vizParams: { bit: 0|1, flip: 0|1|2 }
+//   Copied verbatim from decks/lecture-qec-bit-flip/viz.js.
+// ===========================================================================
+class ClassicalRepetition extends BaseViz {
+  static surface  = 'canvas';
+  static animated = false;
+
+  init(params) {
+    this.bit = params.bit ?? 1;
+    this.flip = params.flip ?? 1;
+    this.stage = 0;
+  }
+
+  controls() {
+    return `
+      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <button data-act="prev">◀ prev</button>
+        <button data-act="next">step ▶</button>
+        <button data-act="reset">reset</button>
+        <span style="opacity:0.6; font-size:14px;">·</span>
+        <span style="font-size:14px;">message bit</span>
+        <button data-act="bit" data-val="0">0</button>
+        <button data-act="bit" data-val="1">1</button>
+        <span style="opacity:0.6; font-size:14px;">·</span>
+        <span style="font-size:14px;">flip qubit</span>
+        <button data-act="flip" data-val="0">1</button>
+        <button data-act="flip" data-val="1">2</button>
+        <button data-act="flip" data-val="2">3</button>
+      </div>
+    `;
+  }
+
+  bindControls(el) {
+    el.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const act = btn.dataset.act;
+        if (act === 'next') this.stage = Math.min(3, this.stage + 1);
+        else if (act === 'prev') this.stage = Math.max(0, this.stage - 1);
+        else if (act === 'reset') this.stage = 0;
+        else if (act === 'bit') { this.bit = +btn.dataset.val; this.stage = 0; }
+        else if (act === 'flip') { this.flip = +btn.dataset.val; }
+        this.rerender();
+      });
+    });
+  }
+
+  draw(ctx) {
+    const p = this.palette;
+    const W = this.w, H = this.h;
+    ctx.fillStyle = p.bgHard;
+    ctx.fillRect(0, 0, W, H);
+
+    const titleY = H * 0.10;
+    const wireY  = H * 0.50;
+
+    // Stage labels
+    const stages = ['Raw bit', 'Encode', 'Noise', 'Decode'];
+    ctx.font = '600 18px ui-monospace, Menlo, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const colW = W / stages.length;
+    for (let i = 0; i < stages.length; i++) {
+      const cx = colW * (i + 0.5);
+      ctx.fillStyle = i <= this.stage ? p.fg : p.gray;
+      ctx.globalAlpha = i <= this.stage ? 1 : 0.45;
+      ctx.fillText(stages[i], cx, titleY);
+      // Stage indicator dots
+      ctx.beginPath();
+      ctx.arc(cx, titleY + 22, 5, 0, Math.PI * 2);
+      ctx.fillStyle = i === this.stage ? p.yellow : (i < this.stage ? p.green : p.gray);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    // Stage 0: raw bit
+    {
+      const cx = colW * 0.5;
+      this.drawBit(ctx, cx, wireY, this.bit, p.blue);
+      ctx.font = '500 16px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.gray;
+      ctx.fillText(`message`, cx, wireY + 60);
+    }
+
+    // Stage 1: encoded triplet
+    if (this.stage >= 1) {
+      const cx = colW * 1.5;
+      const bits = [this.bit, this.bit, this.bit];
+      this.drawTriplet(ctx, cx, wireY, bits, p.blue);
+      ctx.font = '500 16px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.gray;
+      ctx.fillText(`${this.bit}${this.bit}${this.bit}`, cx, wireY + 60);
+    }
+
+    // Stage 2: noise (one bit flipped)
+    if (this.stage >= 2) {
+      const cx = colW * 2.5;
+      const noisy = [this.bit, this.bit, this.bit];
+      noisy[this.flip] ^= 1;
+      this.drawTriplet(ctx, cx, wireY, noisy, p.red, this.flip);
+      ctx.font = '500 16px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.red;
+      ctx.fillText(`flip qubit ${this.flip + 1}`, cx, wireY + 60);
+    }
+
+    // Stage 3: majority vote
+    if (this.stage >= 3) {
+      const cx = colW * 3.5;
+      const noisy = [this.bit, this.bit, this.bit];
+      noisy[this.flip] ^= 1;
+      const sum = noisy.reduce((a, b) => a + b, 0);
+      const decoded = sum >= 2 ? 1 : 0;
+      this.drawBit(ctx, cx, wireY, decoded, decoded === this.bit ? p.green : p.red);
+      ctx.font = '500 16px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.gray;
+      ctx.fillText(`majority vote`, cx, wireY + 60);
+      ctx.font = '600 18px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = decoded === this.bit ? p.green : p.red;
+      ctx.fillText(decoded === this.bit ? '✓ recovered' : '✗ lost', cx, wireY + 90);
+    }
+
+    // Arrows between stages
+    ctx.strokeStyle = p.gray;
+    ctx.globalAlpha = 0.5;
+    ctx.lineWidth = 1.5;
+    for (let i = 0; i < 3; i++) {
+      if (this.stage > i) {
+        const x1 = colW * (i + 0.5) + 60;
+        const x2 = colW * (i + 1.5) - 60;
+        ctx.beginPath();
+        ctx.moveTo(x1, wireY);
+        ctx.lineTo(x2, wireY);
+        ctx.stroke();
+        // arrowhead
+        ctx.beginPath();
+        ctx.moveTo(x2, wireY);
+        ctx.lineTo(x2 - 8, wireY - 4);
+        ctx.lineTo(x2 - 8, wireY + 4);
+        ctx.closePath();
+        ctx.fillStyle = p.gray;
+        ctx.fill();
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    // Bottom caption
+    ctx.font = '500 18px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.fg;
+    ctx.textAlign = 'center';
+    const captions = [
+      'Send a single bit through a noisy channel.',
+      'Encode 0 → 000 and 1 → 111: send three copies.',
+      'Channel flips one bit (with probability p).',
+      'Majority vote recovers the original. Tolerates one flip.',
+    ];
+    ctx.fillText(captions[this.stage], W / 2, H - 24);
+  }
+
+  drawBit(ctx, cx, cy, bit, color) {
+    const r = 26;
+    ctx.fillStyle = this.palette.bgSoft;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.rect(cx - r, cy - r, r * 2, r * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = color;
+    ctx.font = '700 24px ui-monospace, Menlo, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(String(bit), cx, cy);
+  }
+
+  drawTriplet(ctx, cx, cy, bits, color, flipped = -1) {
+    const r = 18;
+    const gap = 4;
+    const totalW = 3 * (2 * r) + 2 * gap;
+    const startX = cx - totalW / 2 + r;
+    bits.forEach((b, i) => {
+      const x = startX + i * (2 * r + gap);
+      const isFlip = i === flipped;
+      ctx.fillStyle = this.palette.bgSoft;
+      ctx.strokeStyle = isFlip ? this.palette.red : color;
+      ctx.lineWidth = isFlip ? 3 : 2;
+      ctx.beginPath();
+      ctx.rect(x - r, cy - r, r * 2, r * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = isFlip ? this.palette.red : color;
+      ctx.font = '700 18px ui-monospace, Menlo, monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(String(b), x, cy);
+    });
+  }
+}
+registerViz('classical-repetition', ClassicalRepetition);
+
+
+// ===========================================================================
+// ErrorRatePlot — physical p vs logical error rate. Two curves:
+//   identity (no encoding): y = p; 3-bit code: y = 3p^2 - 2p^3.
+//   Threshold at p = 1/2. Optional vertical marker at a "real device" p.
+//   vizParams: { showQuantum: bool, marker: number, label: string }
+//   Copied verbatim from decks/lecture-qec-bit-flip/viz.js.
+// ===========================================================================
+class ErrorRatePlot extends BaseViz {
+  static surface  = 'canvas';
+  static animated = false;
+
+  init(params) {
+    this.showQuantum = params.showQuantum ?? true;
+    this.marker = params.marker ?? null;
+    this.markerLabel = params.label || '';
+  }
+
+  draw(ctx) {
+    const p = this.palette;
+    const W = this.w, H = this.h;
+    ctx.fillStyle = p.bgHard;
+    ctx.fillRect(0, 0, W, H);
+
+    const padL = 80, padR = 30, padT = 50, padB = 70;
+    const plotW = W - padL - padR;
+    const plotH = H - padT - padB;
+    const xMax = 1.0;
+    const yMax = 1.0;
+
+    // Title
+    ctx.font = '600 20px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.fg;
+    ctx.textAlign = 'center';
+    ctx.fillText('Logical error rate vs physical error rate', W / 2, 26);
+
+    // Axes
+    ctx.strokeStyle = p.fg;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(padL, padT);
+    ctx.lineTo(padL, padT + plotH);
+    ctx.lineTo(padL + plotW, padT + plotH);
+    ctx.stroke();
+
+    // Helper: data → screen
+    const xS = (x) => padL + (x / xMax) * plotW;
+    const yS = (y) => padT + plotH - (y / yMax) * plotH;
+
+    // Shaded "code helps" region (0 < p < 0.5)
+    if (this.showQuantum) {
+      ctx.fillStyle = p.green;
+      ctx.globalAlpha = 0.10;
+      ctx.fillRect(xS(0), padT, xS(0.5) - xS(0), plotH);
+      ctx.globalAlpha = 1;
+    }
+
+    // Threshold vertical line at p = 0.5
+    if (this.showQuantum) {
+      ctx.strokeStyle = p.gray;
+      ctx.setLineDash([6, 6]);
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(xS(0.5), padT);
+      ctx.lineTo(xS(0.5), padT + plotH);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.font = '500 14px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.gray;
+      ctx.textAlign = 'center';
+      ctx.fillText('threshold p = 1/2', xS(0.5), padT - 4);
+    }
+
+    // Curve 1: identity (y = p)
+    ctx.strokeStyle = p.gray;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.moveTo(xS(0), yS(0));
+    ctx.lineTo(xS(1), yS(1));
+    ctx.stroke();
+    ctx.setLineDash([]);
+    // Label for identity curve
+    ctx.font = '500 16px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.gray;
+    ctx.textAlign = 'left';
+    ctx.fillText('y = p (no code)', xS(0.78), yS(0.86) + 4);
+
+    // Curve 2: 3-bit code (y = 3p² - 2p³)
+    if (this.showQuantum) {
+      ctx.strokeStyle = p.aqua;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      const N = 200;
+      for (let i = 0; i <= N; i++) {
+        const px = (i / N) * xMax;
+        const py = 3 * px * px - 2 * px * px * px;
+        if (i === 0) ctx.moveTo(xS(px), yS(py));
+        else ctx.lineTo(xS(px), yS(py));
+      }
+      ctx.stroke();
+      ctx.font = '600 16px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.aqua;
+      ctx.textAlign = 'left';
+      ctx.fillText('3p² − 2p³ (3-bit code)', xS(0.55), yS(0.30));
+    }
+
+    // Vertical marker for "real device" p
+    if (this.marker !== null && this.marker !== undefined) {
+      const mp = this.marker;
+      ctx.strokeStyle = p.red;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(xS(mp), padT);
+      ctx.lineTo(xS(mp), padT + plotH);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.font = '600 14px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = p.red;
+      ctx.textAlign = 'left';
+      ctx.fillText(`p ≈ ${mp.toFixed(4)} ${this.markerLabel}`, xS(mp) + 6, padT + 16);
+    }
+
+    // x-axis ticks and labels
+    ctx.strokeStyle = p.fg;
+    ctx.lineWidth = 1;
+    ctx.font = '500 14px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.fg;
+    ctx.textAlign = 'center';
+    [0, 0.25, 0.5, 0.75, 1.0].forEach((tx) => {
+      ctx.beginPath();
+      ctx.moveTo(xS(tx), padT + plotH);
+      ctx.lineTo(xS(tx), padT + plotH + 5);
+      ctx.stroke();
+      ctx.fillText(tx.toFixed(2), xS(tx), padT + plotH + 22);
+    });
+    // y-axis ticks and labels
+    ctx.textAlign = 'right';
+    [0, 0.25, 0.5, 0.75, 1.0].forEach((ty) => {
+      ctx.beginPath();
+      ctx.moveTo(padL, yS(ty));
+      ctx.lineTo(padL - 5, yS(ty));
+      ctx.stroke();
+      ctx.fillText(ty.toFixed(2), padL - 10, yS(ty) + 4);
+    });
+    // Axis titles
+    ctx.font = '600 16px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.fg;
+    ctx.textAlign = 'center';
+    ctx.fillText('physical error rate p', padL + plotW / 2, padT + plotH + 50);
+    ctx.save();
+    ctx.translate(20, padT + plotH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('logical error rate', 0, 0);
+    ctx.restore();
+  }
+}
+registerViz('error-rate-plot', ErrorRatePlot);
+
+
+// ===========================================================================
+// FailedCloner — animated no-cloning circuit. Feeding a superposition into a
+//   would-be cloner produces the entangled α|000⟩ + β|111⟩, not three copies;
+//   the output is bracketed across all three wires and labelled
+//   "≠ |ψ⟩|ψ⟩|ψ⟩ (entangled, not copies)". No clicks.
+//   Copied verbatim from decks/lecture-qec-bit-flip/viz.js.
+// ===========================================================================
+class FailedCloner extends BaseViz {
+  static surface  = 'canvas';
+  static animated = true;
+
+  init() {
+    this.particles = [];
+    this.lastEmit = -1;
+  }
+
+  draw(ctx, t) {
+    const p = this.palette;
+    const W = this.w, H = this.h;
+    ctx.fillStyle = p.bgHard;
+    ctx.fillRect(0, 0, W, H);
+
+    // Layout. padR is 0.30 here against the course's 0.20: the lecture pane is
+    // ~900 CSS px wide, this deck's design box is 730, and at 0.20 the output
+    // labels ("α|000⟩ + β|111⟩", "(entangled, not copies)") ran off the right
+    // edge. The only change from the course copy.
+    const padL = W * 0.18;
+    const padR = W * 0.30;
+    const inputX  = padL;
+    const outputX = W - padR;
+    const boxX1 = W * 0.43;
+    const boxX2 = W * 0.57;
+    const wireYs = [H * 0.40, H * 0.50, H * 0.60];
+
+    // Wires
+    ctx.strokeStyle = p.gray;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 1.8;
+    wireYs.forEach((y) => {
+      ctx.beginPath();
+      ctx.moveTo(inputX + 60, y);
+      ctx.lineTo(outputX - 18, y);
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+
+    // Input labels (left side)
+    ctx.font = '600 19px ui-monospace, Menlo, monospace';
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = p.purple;
+    ctx.fillText('α|0⟩ + β|1⟩', inputX + 50, wireYs[0]);
+    ctx.fillStyle = p.gray;
+    ctx.fillText('|0⟩', inputX + 50, wireYs[1]);
+    ctx.fillText('|0⟩', inputX + 50, wireYs[2]);
+
+    // U_clone box (red, signaling the failure case)
+    const boxColor = p.red;
+    const boxY1 = wireYs[0] - 30;
+    const boxY2 = wireYs[2] + 30;
+    ctx.fillStyle = p.bgSoft;
+    ctx.strokeStyle = boxColor;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.rect(boxX1, boxY1, boxX2 - boxX1, boxY2 - boxY1);
+    ctx.fill();
+    ctx.stroke();
+    // Subtle pulse halo
+    const pulse = 0.5 + 0.5 * Math.sin(t * 1.6);
+    ctx.strokeStyle = boxColor;
+    ctx.globalAlpha = 0.20 + 0.18 * pulse;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.rect(boxX1 - 5, boxY1 - 5, boxX2 - boxX1 + 10, boxY2 - boxY1 + 10);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    // Box label
+    ctx.font = '700 20px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = boxColor;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('U_clone', (boxX1 + boxX2) / 2, (boxY1 + boxY2) / 2);
+
+    // Output: one bracketed entangled state across all wires.
+    const bx = outputX - 14;
+    const by1 = wireYs[0];
+    const by2 = wireYs[2];
+    ctx.strokeStyle = p.red;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(bx + 8, by1);
+    ctx.lineTo(bx, by1);
+    ctx.lineTo(bx, by2);
+    ctx.lineTo(bx + 8, by2);
+    ctx.stroke();
+    ctx.font = '600 17px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.red;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('α|000⟩ + β|111⟩', bx + 16, wireYs[1] - 12);
+    ctx.font = '500 14px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.red;
+    ctx.fillText('≠ |ψ⟩|ψ⟩|ψ⟩', bx + 16, wireYs[1] + 12);
+    ctx.fillStyle = p.gray;
+    ctx.fillText('(entangled, not copies)', bx + 16, wireYs[1] + 32);
+
+    // Drifting particles to suggest flow through the circuit.
+    if (t - this.lastEmit > 3.0) {
+      this.lastEmit = t;
+      this.particles.push({ wire: 0, phase: 0, color: p.purple });
+      if (Math.random() < 0.6) this.particles.push({ wire: 1, phase: 0, color: p.gray });
+      if (Math.random() < 0.6) this.particles.push({ wire: 2, phase: 0, color: p.gray });
+    }
+    this.particles = this.particles.filter((q) => q.phase < 1);
+    const xStart = inputX + 60;
+    const xEnd   = outputX - 18;
+    this.particles.forEach((q) => {
+      q.phase += 0.005;
+      const x = xStart + (xEnd - xStart) * q.phase;
+      const y = wireYs[q.wire];
+      ctx.fillStyle = q.color;
+      ctx.globalAlpha = 0.65 - 0.45 * q.phase;
+      ctx.beginPath();
+      ctx.arc(x, y, 3.2, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+
+    // Top header (input being tried) and bottom caption.
+    ctx.font = '600 18px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.fg;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('try cloning  ψ = α|0⟩ + β|1⟩', W / 2, H * 0.10);
+    ctx.font = '500 15px ui-monospace, Menlo, monospace';
+    ctx.fillStyle = p.red;
+    ctx.fillText('Linearity forces the entangled output, not three copies.', W / 2, H * 0.90);
+  }
+}
+registerViz('failed-cloner', FailedCloner);
+
+
+// ===========================================================================
+// SGateExample — static bar chart: a quarter-turn phase gives P(0)=P(1)=1/2.
+//   Copied from decks/qpe/viz.js. One adaptation: the header string named the
+//   course's S gate ("U = S, eigenstate |1⟩, θ = 1/4"), a gate this talk never
+//   defines, so it now names the phase in the talk's own convention
+//   (Δφ = π/2, P(0) = cos²(Δφ/2) = 1/2). The drawing code is unchanged.
+// ===========================================================================
+class SGateExample extends BaseViz {
+  static surface  = 'canvas';
+  static animated = false;
+
+  init() { this._fill.style.backgroundColor = this.palette.bgHard; }
+  onThemeChange(p) { super.onThemeChange(p); this._fill.style.backgroundColor = p.bgHard; }
+
+  draw(ctx) {
+    const colors = this.palette;
+    const { w: W, h: H } = this;
+
+    ctx.fillStyle = colors.bgHard;
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.font = 'bold 22px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = colors.yellow;
+    ctx.fillText('a quarter-turn phase:  Δφ = π/2', W / 2, H * 0.1);
+
+    const barWidth = 100;
+    const gap = 80;
+    const maxBarHeight = H * 0.4;
+    const baseY = H * 0.72;
+    const centerX = W / 2;
+    const bar0X = centerX - gap / 2 - barWidth;
+    const bar1X = centerX + gap / 2;
+    const p = 0.5;
+    const h = p * maxBarHeight;
+    const r = 5;
+
+    ctx.strokeStyle = colors.gray;
+    ctx.globalAlpha = 0.3;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([6, 6]);
+    ctx.beginPath();
+    ctx.moveTo(bar0X - 20, baseY - h);
+    ctx.lineTo(bar1X + barWidth + 20, baseY - h);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(bar0X - 20, baseY);
+    ctx.lineTo(bar1X + barWidth + 20, baseY);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    const roundedBar = (x, y, w, hh, color) => {
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + hh);
+      ctx.lineTo(x, y + hh);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    };
+    roundedBar(bar0X, baseY - h, barWidth, h, colors.green);
+    roundedBar(bar1X, baseY - h, barWidth, h, colors.red);
+
+    ctx.font = 'bold 24px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = colors.green;
+    ctx.fillText('|0⟩', bar0X + barWidth / 2, baseY + 32);
+    ctx.fillStyle = colors.red;
+    ctx.fillText('|1⟩', bar1X + barWidth / 2, baseY + 32);
+
+    ctx.font = 'bold 28px system-ui, sans-serif';
+    ctx.fillStyle = colors.green;
+    ctx.fillText('1/2', bar0X + barWidth / 2, baseY - h - 16);
+    ctx.fillStyle = colors.red;
+    ctx.fillText('1/2', bar1X + barWidth / 2, baseY - h - 16);
+
+    ctx.font = 'bold 20px system-ui, sans-serif';
+    ctx.fillStyle = colors.yellow;
+    ctx.fillText('Every measurement is a coin flip!', W / 2, H * 0.22);
+
+    ctx.font = '17px system-ui, sans-serif';
+    ctx.fillStyle = colors.fg;
+    ctx.globalAlpha = 0.7;
+    ctx.fillText('cos²(π/4) = 1/2     sin²(π/4) = 1/2', W / 2, H * 0.92);
+    ctx.globalAlpha = 1;
+  }
+}
+registerViz('s-gate-example', SGateExample);
+
+
+// ===========================================================================
+// WaveInterference — two sine lanes and their sum, with constructive /
+//   destructive controls; the delta between the lanes glides smoothly when
+//   the mode changes, so the cancellation is watched, not cut to.
+//
+//   Ported from the archived React lecture
+//   (lecture10-interference-quantum-power.jsx, WaveInterferenceViz). The
+//   drawing logic is the original's; three things changed for this deck:
+//   the React state/effect wrapper became init/controls/bindControls, the
+//   per-frame increments (phase += 0.03, delta lerp 5%/frame, both assuming
+//   60 fps) became wall-clock t so speed is frame-rate independent, and the
+//   phase wraps modulo 2π (sin is periodic, and the original's alignment-
+//   indicator search assumed a bounded phase). Layout constants re-tuned for
+//   the 730×470 design box; colors come from this.palette.
+//   vizParams: { mode: 'constructive' | 'destructive' }
+// ===========================================================================
+class WaveInterference extends BaseViz {
+  static surface  = 'canvas';
+  static animated = true;
+
+  init(params) {
+    this.mode   = params.mode ?? 'constructive';
+    this.delta  = this.mode === 'constructive' ? 0 : Math.PI;
+    this._lastT = null;
+  }
+
+  controls() {
+    return `
+      <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <button data-act="mode" data-val="constructive">constructive</button>
+        <button data-act="mode" data-val="destructive">destructive</button>
+      </div>
+    `;
+  }
+
+  bindControls(el) {
+    el.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (btn.dataset.act === 'mode') this.mode = btn.dataset.val;
+      });
+    });
+  }
+
+  draw(ctx, t) {
+    const p = this.palette;
+    const W = this.w, H = this.h;
+    ctx.fillStyle = p.bgHard;
+    ctx.fillRect(0, 0, W, H);
+
+    // Wall-clock pacing (see the header comment).
+    const dt = this._lastT === null ? 0 : Math.min(0.1, t - this._lastT);
+    this._lastT = t;
+    const targetDelta = this.mode === 'constructive' ? 0 : Math.PI;
+    this.delta += (targetDelta - this.delta) * (1 - Math.exp(-3.0 * dt));
+    const delta = this.delta;
+    const phase = (t * 1.8) % (2 * Math.PI);
+
+    const freq = 0.04;
+    const amp  = 28;
+    const waveLeft  = 80;
+    const waveRight = W - 20;
+    const waveWidth = waveRight - waveLeft;
+    const labelX    = waveLeft / 2;
+
+    // Lane layout: two input waves, their sum, and a result bar.
+    const wave1Y  = H * 0.15;
+    const wave2Y  = H * 0.35;
+    const sumY    = H * 0.60;
+    const barY    = H * 0.87;
+    const barMaxH = H * 0.11;
+
+    const drawWave = (centerY, color, phaseDelta, lw) => {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = lw || 2.5;
+      for (let px = 0; px <= waveWidth; px++) {
+        const x = waveLeft + px;
+        const y = centerY + amp * Math.sin(px * freq + phase + phaseDelta);
+        if (px === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    };
+
+    // Center line for each lane
+    ctx.strokeStyle = p.gray;
+    ctx.globalAlpha = 0.12;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 8]);
+    [wave1Y, wave2Y, sumY].forEach((y) => {
+      ctx.beginPath();
+      ctx.moveTo(waveLeft, y);
+      ctx.lineTo(waveRight, y);
+      ctx.stroke();
+    });
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 1;
+
+    // Left-margin labels, equation style
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 18px system-ui, sans-serif';
+    ctx.fillStyle = p.blue;
+    ctx.fillText('Wave 1', labelX, wave1Y + 5);
+    drawWave(wave1Y, p.blue, 0);
+
+    ctx.font = 'bold 18px system-ui, sans-serif';
+    ctx.fillStyle = p.fg;
+    ctx.globalAlpha = 0.6;
+    ctx.fillText('+', labelX, (wave1Y + wave2Y) / 2 + 8);
+    ctx.globalAlpha = 1;
+
+    ctx.font = 'bold 18px system-ui, sans-serif';
+    ctx.fillStyle = p.aqua;
+    ctx.fillText('Wave 2', labelX, wave2Y + 5);
+    drawWave(wave2Y, p.aqua, delta);
+
+    // Crest/trough alignment indicators
+    const alignIndicators = [];
+    for (let k = -2; k < 8; k++) {
+      const peakPx = (Math.PI / 2 + 2 * Math.PI * k - phase) / freq;
+      if (peakPx >= 10 && peakPx <= waveWidth - 10) {
+        alignIndicators.push({ px: peakPx, w1Sin: 1 });
+      }
+      const troughPx = (3 * Math.PI / 2 + 2 * Math.PI * k - phase) / freq;
+      if (troughPx >= 10 && troughPx <= waveWidth - 10) {
+        alignIndicators.push({ px: troughPx, w1Sin: -1 });
+      }
+    }
+
+    const alignCos = Math.cos(delta);
+    const alignStrengthGlobal = Math.abs(alignCos);
+    const isConstructive = alignCos > 0;
+
+    for (const ind of alignIndicators) {
+      const x = waveLeft + ind.px;
+      const y1 = wave1Y + amp * ind.w1Sin;
+      const w2Sin = Math.sin(ind.px * freq + phase + delta);
+      const y2 = wave2Y + amp * w2Sin;
+
+      // Connector line (fades when ambiguous during transition)
+      ctx.strokeStyle = isConstructive ? p.green : p.red;
+      ctx.globalAlpha = 0.15 + 0.35 * alignStrengthGlobal;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([3, 5]);
+      ctx.beginPath();
+      ctx.moveTo(x, y1);
+      ctx.lineTo(x, y2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+
+      // Dot markers at extrema
+      ctx.fillStyle = p.blue;
+      ctx.beginPath(); ctx.arc(x, y1, 4, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = p.aqua;
+      ctx.beginPath(); ctx.arc(x, y2, 4, 0, Math.PI * 2); ctx.fill();
+    }
+
+    // Fixed-position alignment annotation
+    const sepY = (wave2Y + sumY) / 2;
+    if (alignStrengthGlobal > 0.3) {
+      const annX = (waveLeft + waveRight) / 2;
+      const annY = (wave2Y + amp + sepY) / 2 + 6;
+      ctx.fillStyle = isConstructive ? p.green : p.red;
+      ctx.font = 'bold 18px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.globalAlpha = Math.min(alignStrengthGlobal, 0.9);
+      ctx.fillText(
+        isConstructive ? 'crest + crest  → adds up!' : 'crest + trough  → cancels!',
+        annX, annY);
+      ctx.globalAlpha = 1;
+    }
+
+    // Horizontal separator line + "=" sign
+    ctx.strokeStyle = p.fg;
+    ctx.globalAlpha = 0.25;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(waveLeft, sepY);
+    ctx.lineTo(waveRight, sepY);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    ctx.font = 'bold 18px system-ui, sans-serif';
+    ctx.fillStyle = p.yellow;
+    ctx.textAlign = 'center';
+    ctx.fillText('=', labelX, sepY + 8);
+    ctx.fillText('Result', labelX, sumY + 5);
+
+    // Sum wave
+    ctx.beginPath();
+    ctx.strokeStyle = p.yellow;
+    ctx.lineWidth = 3;
+    let maxSumAmp = 0;
+    for (let px = 0; px <= waveWidth; px++) {
+      const x = waveLeft + px;
+      const v1 = amp * Math.sin(px * freq + phase);
+      const v2 = amp * Math.sin(px * freq + phase + delta);
+      const sum = v1 + v2;
+      maxSumAmp = Math.max(maxSumAmp, Math.abs(sum));
+      const y = sumY + sum;
+      if (px === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Result amplitude bar
+    const resultAmp = maxSumAmp / (2 * amp);
+    const barWidth = 80;
+    const barX = W / 2 - barWidth / 2;
+    const barH = resultAmp * barMaxH;
+    const on = resultAmp > 0.3;
+
+    ctx.fillStyle = on ? p.green : p.red;
+    ctx.globalAlpha = 0.85;
+    if (barH > 1) {
+      const r = 4;
+      ctx.beginPath();
+      ctx.moveTo(barX + r, barY - barH);
+      ctx.lineTo(barX + barWidth - r, barY - barH);
+      ctx.quadraticCurveTo(barX + barWidth, barY - barH, barX + barWidth, barY - barH + r);
+      ctx.lineTo(barX + barWidth, barY);
+      ctx.lineTo(barX, barY);
+      ctx.lineTo(barX, barY - barH + r);
+      ctx.quadraticCurveTo(barX, barY - barH, barX + r, barY - barH);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    ctx.fillStyle = on ? p.green : p.red;
+    ctx.font = 'bold 18px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(on ? 'REINFORCED' : 'CANCELLED', W / 2, barY + 22);
+  }
+}
+registerViz('wave-interference', WaveInterference);
+
 </script>
 <script>
-// slides.js — IEEE High Plains section talk, 25 slides (24 presented, 1
+// slides.js — IEEE High Plains section talk, 23 slides (22 presented, 1
 // backup). Built from the US CLIVAR deck on 2026-08-20; see README.md.
-// Revised same day after a first pass: result-first hook, a new
-// what-makes-quantum-different slide in Act 1, prose trims on the four
-// smallest-rendering slides, and a rewritten LIGO squeezing box.
+// Third revision, same day, hours before the talk: Act 1 rebuilt as a
+// self-standing intro to quantum computing (superposition, interference,
+// the 2^n space, entanglement, statistics: one slide per concept, phase
+// defined inside the interference slide), the sensing tour cut down to LIGO
+// as the one motivating instrument, the gravimetry details scrubbed to an
+// abstract SQL-vs-Heisenberg statement (the 620x ratio survives with its
+// provenance in one parenthetical), and a four-slide QEC intro added, its
+// text reused from the course's bit-flip lecture, where it has already been
+// verified and taught.
 //
-// Arc: hook -> quantum 101 (superposition, the 2^n space, phase,
-// entanglement, statistics) -> sensing tour (clocks/GPS, LIGO, gravimeter)
-// -> SQL vs Heisenberg -> prior protocols -> our protocol -> near-term
-// pathway -> Qupacabrathon.
+// Arc: hook -> quantum computing 101 (superposition, interference, the 2^n
+// space, entanglement, statistics) -> LIGO pivot to sensing -> Ramsey +
+// inference -> SQL vs Heisenberg -> decoherence -> QEC from the classical
+// repetition code -> SQL barrier -> our protocol (detection, not correction)
+// -> numerics -> pilot -> close.
 //
 // Audience is IEEE section members, most of them new to quantum; the
 // organizers asked for a short introduction to quantum theory and
-// quantum-enhanced measurement before the technical content. Acts 1 and 2
-// carry that: every concept the technical arc leans on (superposition,
-// measurement, phase, entanglement, shot statistics) is grounded there
-// first. The metrology claims stay tight enough for a specialist guest.
+// quantum-enhanced measurement before the technical content. Act 1 carries
+// that: every concept the technical arc leans on (superposition,
+// measurement, phase, interference, entanglement, shot statistics) is
+// grounded there first. No later slide should have to define a concept
+// mid-argument.
 //
 // Every number on a slide is either computed in viz.js from constants, or
 // cited to a source checked against sensing_qec/ref.bib. See speaker-notes.md
@@ -5083,21 +5951,21 @@ window.SLIDES = [
       Fort Collins · August 20, 2026</p>
     `,
     // Ambiance, not a divider card: the narrative already carries the title, so
-    // the pane shows errors appearing and being flagged, never corrected. The
-    // label/tint/sub the section-pause card used are gone with it.
+    // the pane shows errors appearing and being flagged, never corrected.
     viz: 'parity-pulse-field',
     vizParams: { cycle: 10.0 },
   },
 
-  // ==================== ACT 1 - QUANTUM 101 =================================
-  // New for this venue. The room is IEEE members, most of them new to quantum,
-  // so everything the technical arc leans on (superposition, measurement,
-  // phase, entanglement, shot statistics) is grounded here first, in this
-  // order. No later slide should have to define a concept mid-argument.
+  // ================= ACT 1 - QUANTUM COMPUTING ==============================
+  // Rebuilt in the third revision as a self-standing intro to quantum
+  // computing: superposition + interference in a large-dimensional space, one
+  // slide per concept. The room is IEEE members, most of them new to quantum.
+  // Slide text on the QEC act (Act 3) and the coin-flip framing here reuse
+  // course-lecture text the author has already taught and verified.
 
   {
     id: 'qubit-101',
-    category: 'Act 1 · Quantum 101',
+    category: 'Act 1 · Quantum computing',
     title: 'A qubit: both options at once, until you look',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5105,6 +5973,8 @@ window.SLIDES = [
         <p>A classical bit is 0 or 1. A qubit holds both at once, each with a
         weight called an amplitude:</p>
         <p>$$ \\ket{\\psi} = \\alpha\\ket{0} + \\beta\\ket{1}. $$</p>
+        <p>This is not "trying both answers at once": the combination is more
+        subtle, and more powerful.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">Measurement asks one question</p>
@@ -5116,15 +5986,38 @@ window.SLIDES = [
         <p class="cb-title cb-green">One shot returns one noisy bit.</p>
         <p>Every quantum sensor in this talk lives with that.</p>
       </div>
-      <p class="tag">Pane: one family of superpositions, swept by a dial
-      $\\theta$; the bars are the two outcome probabilities.</p>
     `,
     viz: 'probability',
   },
 
   {
+    id: 'interference',
+    category: 'Act 1 · Quantum computing',
+    title: 'Interference: the missing ingredient',
+    narrative: `
+      <div class="cb cb-soft cb-blue">
+        <p class="cb-title cb-blue">Amplitudes carry an angle</p>
+        <p>An amplitude has a size <em>and an angle</em>: the phase. When two
+        amplitudes combine, that angle decides what happens.</p>
+      </div>
+      <div class="cb cb-soft cb-yellow">
+        <p class="cb-title cb-yellow">Reinforce, or cancel</p>
+        <p><strong>Constructive:</strong> crest lands on crest, the amplitudes
+        add up, probability grows. <strong>Destructive:</strong> crest lands on
+        trough, they subtract, probability shrinks. Classical probabilities can
+        only add up. Amplitudes are complex numbers, so they can cancel.</p>
+      </div>
+      <div class="cb cb-hard cb-aqua center">
+        <p class="cb-title cb-aqua">Interference turns phase into probabilities.</p>
+        <p>Every sensor in this talk is a machine for doing exactly that.</p>
+      </div>
+    `,
+    viz: 'wave-interference',
+  },
+
+  {
     id: 'quantum-different',
-    category: 'Act 1 · Quantum 101',
+    category: 'Act 1 · Quantum computing',
     title: 'What makes quantum different',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5133,9 +6026,9 @@ window.SLIDES = [
         $n$ spins costs $2^{n}$ classical numbers.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Amplitudes interfere like waves</p>
-        <p>Computation choreographs them so wrong answers cancel and right
-        ones add.</p>
+        <p class="cb-title cb-yellow">Interference does the choreography</p>
+        <p>Computation steers those amplitudes so wrong answers cancel and
+        right ones add.</p>
       </div>
       <div class="cb cb-hard cb-green">
         <p class="cb-title cb-green">Superposition + interference, in a space
@@ -5155,45 +6048,13 @@ window.SLIDES = [
         { value: '$2^{300} \\approx 2\\times10^{90}$', color: 'purple',
           label: 'the count at 300 qubits: a 91-digit number of amplitudes, from a register of 300 physical objects' },
       ],
-      footer: 'The size alone is storage, not advantage. Interference is what cashes it in, and the next slide is about the dial it turns on: phase.',
-    },
-  },
-
-  {
-    id: 'phase-101',
-    category: 'Act 1 · Quantum 101',
-    title: 'Phase: the dial a qubit carries',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Amplitudes are arrows</p>
-        <p>An amplitude has a size <em>and an angle</em>: the phase. The
-        $\\ket{1}$ branch can point anywhere on a circle:</p>
-        <p>$$ \\tfrac{1}{\\sqrt{2}}\\left(\\ket{0} + e^{i\\phi}\\ket{1}\\right). $$</p>
-      </div>
-      <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Measurement alone cannot see it</p>
-        <p>This state answers 0 or 1 with probability $\\tfrac{1}{2}$ each,
-        <em>whatever</em> $\\phi$ is, until the branches recombine and
-        interfere.</p>
-      </div>
-      <div class="cb cb-hard cb-aqua center">
-        <p class="cb-title cb-aqua">Interference turns phase into probabilities.</p>
-        <p>Every sensor in this talk is a machine for doing exactly that.</p>
-      </div>
-      <p class="tag">The pane's dial is $\\theta = \\phi/2\\pi$: phase as a
-      fraction of a full turn.</p>
-    `,
-    viz: 'phase-circle',
-    vizParams: {
-      title: 'Phase: an angle on a circle',
-      formula: '\\ket{\\psi} = \\tfrac{1}{\\sqrt{2}}\\left(\\ket{0} + e^{i\\,2\\pi\\theta}\\ket{1}\\right)',
-      theta0: 0.125,
+      footer: 'The size alone is storage, not advantage. Interference is what cashes it in.',
     },
   },
 
   {
     id: 'entangle-101',
-    category: 'Act 1 · Quantum 101',
+    category: 'Act 1 · Quantum computing',
     title: 'Entanglement: many atoms, one state',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5201,6 +6062,8 @@ window.SLIDES = [
         <p>Two qubits can be prepared so that neither has a state of its own.
         Only the pair does:</p>
         <p>$$ \\tfrac{1}{\\sqrt{2}}\\left(\\ket{00} + \\ket{11}\\right). $$</p>
+        <p>All entangled states are superpositions, but not all superpositions
+        are entangled.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">Measure one and both answer</p>
@@ -5228,11 +6091,11 @@ window.SLIDES = [
 
   {
     id: 'stats-101',
-    category: 'Act 1 · Quantum 101',
+    category: 'Act 1 · Quantum computing',
     title: 'Precision is statistics',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">One shot is a biased coin flip</p>
+        <p class="cb-title cb-blue">Every measurement is a coin flip</p>
         <p>A quantum measurement returns one noisy bit, and the quantity you
         care about hides in the <em>bias</em> of that coin. Measuring
         precisely means flipping many times and averaging.</p>
@@ -5248,57 +6111,20 @@ window.SLIDES = [
         <p>The quantum sensing game is about paying less.</p>
       </div>
     `,
-    viz: 'classical-cost',
-    vizParams: { mode: 'intro' },
+    viz: 's-gate-example',
   },
 
-  // ==================== ACT 2 - SENSING TOUR ================================
-  // Three stops, narrowing: quantum sensors the room already relies on, the
-  // most famous phase measurement on Earth, then the instrument the rest of
-  // the talk analyzes. LIGO is framed as a one-shot transient detection whose
-  // noise floor squeezed light lowers; the repeat-shot statistics story (SQL,
-  // Heisenberg) is deliberately reserved for the gravimeter, and the landing
-  // slide says why.
-
-  {
-    id: 'sensing-everywhere',
-    category: 'Act 2 · Sensing tour',
-    title: 'Quantum sensors already run your day',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Atomic clocks, which is to say GPS</p>
-        <p>An atomic clock locks an oscillator to atoms cycling through a
-        superposition: timekeeping by phase. A position fix is computed from
-        atomic-clock time stamps, and a nanosecond of timing error is about
-        30 cm of position error.</p>
-      </div>
-      <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Magnetometers</p>
-        <p>Atomic spins precess in a magnetic field; reading their phase reads
-        the field.</p>
-      </div>
-      <div class="cb cb-hard cb-green center">
-        <p class="cb-title cb-green">The same loop every time</p>
-        <p>Prepare a superposition, let the world write a phase on it,
-        interfere, count.</p>
-      </div>
-    `,
-    viz: 'fact-card',
-    vizParams: {
-      title: 'One pattern, many instruments',
-      facts: [
-        { value: '$c \\times 1\\ \\mathrm{ns} \\approx 30\\ \\mathrm{cm}$', color: 'blue',
-          label: 'why navigation runs on atomic clocks: light covers about thirty centimeters per nanosecond, so position error is timing error' },
-        { value: 'prepare → phase → interfere → count', color: 'aqua',
-          label: 'the measurement loop shared by clocks, magnetometers, LIGO and the gravimeter this talk analyzes' },
-      ],
-      footer: 'Timing, magnetic fields, rotation, gravity: different signals, one phase-measurement pattern.',
-    },
-  },
+  // ============= ACT 2 - FROM COMPUTING TO SENSING ==========================
+  // One motivating instrument: LIGO, framed as a one-shot transient detection
+  // whose noise floor squeezed light lowers. Then the measurement primitive
+  // (Ramsey), the inference framing, and the abstract SQL-vs-Heisenberg
+  // comparison. The gravimetry worked example from earlier revisions is
+  // scrubbed; the 620x ratio survives with its provenance in one
+  // parenthetical.
 
   {
     id: 'ligo-tour',
-    category: 'Act 2 · Sensing tour',
+    category: 'Act 2 · From computing to sensing',
     title: 'LIGO: one flash of phase',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5329,87 +6155,46 @@ window.SLIDES = [
   },
 
   {
-    id: 'why-gravity',
-    category: 'Act 2 · Sensing tour',
-    title: 'Last stop: the cold-atom gravimeter',
+    id: 'ramsey',
+    category: 'Act 2 · From computing to sensing',
+    title: 'The measurement primitive',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Weighing the ground beneath you</p>
-        <p>A cold-atom gravimeter drops laser-cooled rubidium and reads the
-        local gravitational acceleration $g$ off the atoms themselves. Mobile
-        versions run field surveys today.</p>
+        <p class="cb-title cb-blue">Ramsey interferometry, drawn as a circuit</p>
+        <p>Prepare, let the signal put a phase $\\Delta\\phi$ on one branch,
+        interfere, measure. Physicists call it a Ramsey sequence. Quantum
+        computing calls it a Hadamard test. Same circuit.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Why $g$ is worth the trouble</p>
-        <p>Mass moves and gravity records it. Groundwater, snowpack, ice:
-        measuring $g$ precisely enough is a way of weighing water, which is
-        why climate and resource surveys want these instruments.</p>
-      </div>
-      <div class="cb cb-hard cb-aqua">
-        <p class="cb-title cb-aqua">Why the talk lands here</p>
-        <p>It measures gravity as a <em>phase</em>. And unlike LIGO's
-        once-only transient, gravity is always on: the instrument repeats
-        shots at will and plays statistics. That makes it the clean place to
-        ask how precision scales with atoms.</p>
+        <p class="cb-title cb-yellow">One shot is one bit of evidence</p>
+        <p>A single run cannot tell you $\\Delta\\phi$. It tells you the outcome of one
+        biased coin flip whose bias encodes $\\Delta\\phi$.</p>
       </div>
     `,
-    viz: 'fact-card',
+    viz: 'hadamard-circuit',
     vizParams: {
-      title: 'The instrument this talk is about',
-      facts: [
-        { value: '$37\\ \\mu\\mathrm{Gal}$', color: 'aqua',
-          label: 'sensitivity of a mobile cold-atom gravimeter running surveys in the field, with better than 2 µGal long-term stability',
-          cite: 'Gravity surveys using a mobile atom interferometer, Sci. Adv. 5, eaax0800 (2019)' },
-        { value: '$\\Delta\\phi = k_{\\mathrm{eff}}\\, g\\, T^{2}$', color: 'blue',
-          label: 'what it actually measures is a phase, so its precision is set by how well that phase can be resolved',
-          cite: 'Peters, Chung & Chu, Metrologia 38, 25 (2001)' },
+      gateLabel: '\\phi',
+      eigenvalue: '\\Delta\\phi',
+      targetLabel: '\\ket{\\text{signal}}',
+      stepLabels: ['Initial', 'After H', 'Phase', 'After H', 'Measure'],
+      stateTexts: [
+        '\\ket{0} \\qquad \\text{the probe starts here}',
+        '\\half\\left(\\ket{0} + \\ket{1}\\right) \\qquad \\text{two arms}',
+        '\\half\\left(\\ket{0} + e^{i\\Delta\\phi}\\ket{1}\\right) \\qquad \\text{the signal acts}',
+        '\\cos(\\Delta\\phi/2)\\ket{0} + i\\sin(\\Delta\\phi/2)\\ket{1} \\qquad \\text{recombined}',
+        'P(0) = \\cos^{2}(\\Delta\\phi/2), \\qquad P(1) = \\sin^{2}(\\Delta\\phi/2)',
       ],
-      footer: 'A deployed instrument whose precision is a phase-estimation problem. Everything that follows is about how that estimate scales with resources.',
     },
-  },
-
-  // ==================== ACT 3 - THE GRAVIMETER ==============================
-  // The USCLIVAR technical arc, delivered slower: gravity is a phase, the
-  // inference framing, Ramsey, shot noise (now a callback to Act 1's coin),
-  // the SQL in microgals, the Heisenberg limit.
-
-  {
-    id: 'gravity-is-phase',
-    category: 'Act 3 · The gravimeter',
-    title: 'Gravity is a phase, and a phase is a qubit',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Split, redirect, recombine</p>
-        <p>Laser-cooled rubidium in free fall. Three pulses split each atom into
-        two momentum states and bring them back: $\\ket{0}$ took no photon kick,
-        $\\ket{1}$ took one.</p>
-      </div>
-      <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Gravity acts coherently, and leaves a phase</p>
-        <p>The atom stays in superposition for the whole $2T$ sequence.</p>
-        <p>$$ \\Delta\\phi \\;=\\; k_{\\mathrm{eff}}\\, g\\, T^{2} $$</p>
-      </div>
-      <div class="cb cb-hard cb-purple">
-        <p class="cb-title cb-purple">Those two branches are a qubit</p>
-        <p>The outer pulses are Hadamards, the middle one swaps them, gravity is
-        the phase gate. One-qubit phase estimation, a few hundred thousand times
-        over.</p>
-      </div>
-      <p class="tag">Reference: Peters, Chung &amp; Chu, Metrologia
-      <strong>38</strong>, 25 (2001).</p>
-    `,
-    viz: 'atom-mz',
-    vizParams: { T: 0.100 },
   },
 
   {
     id: 'inference',
-    category: 'Act 3 · The gravimeter',
+    category: 'Act 2 · From computing to sensing',
     title: 'So it is an inference problem',
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">What the detector actually returns</p>
-        <p>Not a phase. A single bit per atom, distributed as</p>
+        <p>Not a phase. A single bit per shot, distributed as</p>
         <p>$$ P(0) = \\cos^{2}(\\Delta\\phi/2), \\qquad P(1) = \\sin^{2}(\\Delta\\phi/2). $$</p>
       </div>
       <div class="cb cb-soft cb-yellow">
@@ -5428,132 +6213,51 @@ window.SLIDES = [
     vizParams: { phiTrue: 1.6, maxShots: 120, rate: 12, holdAfter: 8 },
   },
 
-  // ============= ACT 3 (cont.) - SQL vs HEISENBERG ==========================
-
   {
-    id: 'ramsey',
-    category: 'Act 3 · The gravimeter',
-    title: 'The measurement primitive',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Ramsey interferometry, drawn as a circuit</p>
-        <p>Prepare, put a phase on one branch, interfere, measure. Physicists call
-        it a Ramsey sequence. Quantum computing calls it a Hadamard test. Same
-        circuit.</p>
-      </div>
-      <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">One shot is one bit of evidence</p>
-        <p>A single run cannot tell you $\\Delta\\phi$. It tells you the outcome of one
-        biased coin flip whose bias encodes $\\Delta\\phi$.</p>
-      </div>
-    `,
-    viz: 'hadamard-circuit',
-    vizParams: {
-      gateLabel: '\\phi',
-      eigenvalue: '\\Delta\\phi',
-      targetLabel: '\\ket{g}',
-      stepLabels: ['Initial', 'After H', 'Phase', 'After H', 'Measure'],
-      stateTexts: [
-        '\\ket{0} \\qquad \\text{atom in one momentum state}',
-        '\\half\\left(\\ket{0} + \\ket{1}\\right) \\qquad \\text{two arms}',
-        '\\half\\left(\\ket{0} + e^{i\\Delta\\phi}\\ket{1}\\right) \\qquad \\text{gravity acts}',
-        '\\cos(\\Delta\\phi/2)\\ket{0} + i\\sin(\\Delta\\phi/2)\\ket{1} \\qquad \\text{recombined}',
-        'P(0) = \\cos^{2}(\\Delta\\phi/2), \\qquad P(1) = \\sin^{2}(\\Delta\\phi/2)',
-      ],
-    },
-  },
-
-  {
-    id: 'shot-noise',
-    category: 'Act 3 · The gravimeter',
-    title: 'Where $1/\\sqrt{N}$ comes from',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Act 1's biased coin, now with atoms</p>
-        <p>Each atom is an independent Bernoulli sample. Estimating the bias of a
-        coin to precision $\\varepsilon$ takes $N \\sim 1/\\varepsilon^{2}$ flips,
-        because independent variances add and the standard error of the mean falls
-        as $1/\\sqrt{N}$.</p>
-      </div>
-      <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Quadratic cost in precision</p>
-        <p>One more digit of precision costs a hundred times the samples. The chart
-        is on a log axis, so that constant factor becomes a constant step: ten
-        steps span twenty orders of magnitude.</p>
-      </div>
-      <div class="cb cb-soft cb-orange">
-        <p class="cb-title cb-orange">In the lab this is projection noise</p>
-        <p>Same statement, different vocabulary. Uncorrelated atoms give phase
-        uncertainty $\\sigma_{\\phi} = 1/\\sqrt{N}$.</p>
-      </div>
-    `,
-    viz: 'classical-cost',
-    vizParams: { mode: 'intro' },
-  },
-
-  {
-    id: 'sql',
-    category: 'Act 3 · The gravimeter',
-    title: 'The Standard Quantum Limit, in microgals',
-    narrative: `
-      <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Put a number on it</p>
-        <p>Target 1 µGal $= 10\\ \\mathrm{nm/s^{2}}$. Rubidium-87,
-        counter-propagating Raman beams:
-        $k_{\\mathrm{eff}} = 1.611\\times10^{7}\\ \\mathrm{m^{-1}}$, $T = 100$ ms.</p>
-        <p>$$ \\sigma_{\\phi} \\;=\\; k_{\\mathrm{eff}}\\,T^{2}\\,\\sigma_{g}
-           \\;=\\; 1.61\\ \\mathrm{mrad}. $$</p>
-      </div>
-      <div class="cb cb-soft cb-red">
-        <p class="cb-title cb-red">At the SQL that costs</p>
-        <p>$$ \\sigma_{\\phi} = 1/\\sqrt{N} \\;\\Longrightarrow\\;
-           N \\;=\\; 1/\\sigma_{\\phi}^{2} \\;\\approx\\; 3.9\\times10^{5}\\ \\text{atoms}. $$</p>
-      </div>
-      <p class="tag">The $1/\\sqrt{N}$ floor: Caves, Phys. Rev. D <strong>23</strong>,
-      1693 (1981).</p>
-    `,
-    viz: 'classical-cost',
-    vizParams: { mode: 'full' },
-  },
-
-  {
-    id: 'heisenberg',
-    category: 'Act 3 · The gravimeter',
-    title: 'The Heisenberg limit: same measurement, 620 times cheaper',
+    id: 'sql-vs-heisenberg',
+    category: 'Act 2 · From computing to sensing',
+    title: 'Two limits: $1/\\sqrt{N}$ or $1/N$',
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">Act 1's GHZ state, at work</p>
         <p>$$ \\ket{\\mathrm{GHZ}_{N}} = \\tfrac{\\ket{0\\cdots0}+\\ket{1\\cdots1}}{\\sqrt{2}}
-           \\;\\xrightarrow{\\ \\text{gravity}\\ }\\;
+           \\;\\xrightarrow{\\ \\text{signal}\\ }\\;
            \\tfrac{\\ket{0\\cdots0}+e^{iN\\Delta\\phi}\\ket{1\\cdots1}}{\\sqrt{2}} $$</p>
+        <p>The accumulated phase grows with $N$. The readout noise does not.</p>
       </div>
       <div class="cb cb-soft cb-aqua">
-        <p><strong>$N$ independent probes:</strong> average to $1/\\sqrt{N}$.</p>
-        <p><strong>One GHZ probe:</strong> sees $N\\Delta\\phi$ coherently, reads
-        out at $1/N$.</p>
+        <p><strong>$N$ independent probes:</strong> each sees $\\Delta\\phi$;
+        averaging gives $1/\\sqrt{N}$. The <em>standard quantum limit</em>.</p>
+        <p><strong>One GHZ probe:</strong> sees $N\\Delta\\phi$ coherently;
+        the readout gives $1/N$. The <em>Heisenberg limit</em>.</p>
       </div>
       <div class="cb cb-hard cb-green center">
-        <p class="cb-title cb-green">Same 1 µGal, same 1.61 mrad</p>
-        <p class="cb-big">$N = 1/\\sigma_{\\phi} \\approx 621$ atoms, down from
-        $3.9\\times10^{5}$.</p>
+        <p class="cb-title cb-green">A quadratic gain in precision</p>
+        <p class="cb-big">At fixed precision, $1/N$ needs about 620 times fewer
+        atoms (a 1 µGal gravity-survey target).</p>
       </div>
-      <p class="tag">Ideal projection-noise floors, not instrument budgets.
-      Correlated states reaching $1/N$: Bollinger et al., Phys. Rev. A
-      <strong>54</strong>, R4649 (1996).</p>
+      <p class="tag">The $1/\\sqrt{N}$ floor: Caves, Phys. Rev. D
+      <strong>23</strong>, 1693 (1981). Correlated states reaching $1/N$:
+      Bollinger et al., Phys. Rev. A <strong>54</strong>, R4649 (1996).</p>
     `,
     viz: 'ghz-braid',
     vizParams: {
       N: 5,
       readout: 'P(0) = \\cos^{2}\\!\\left(N \\Delta\\phi / 2\\right)',
-      caption: '621 \\text{ atoms instead of } 3.9 \\times 10^{5}',
+      caption: '\\text{same precision, } 620\\times \\text{ fewer atoms}',
     },
   },
 
-  // ==================== ACT 4 - PRIOR PROTOCOLS =============================
+  // ========================= ACT 3 - ERRORS =================================
+  // Decoherence takes the gain back, and the fix is taught from scratch: the
+  // classical repetition code, when it helps, the quantum catch, and the
+  // syndrome. The four QEC slides reuse text from the course's bit-flip
+  // lecture (decks/lecture-qec-bit-flip/slides.js), already verified and
+  // taught there; only lecture chrome is adapted.
 
   {
     id: 'fragility',
-    category: 'Act 4 · Prior protocols',
+    category: 'Act 3 · Errors',
     title: 'Decoherence eats the advantage',
     narrative: `
       <div class="cb cb-soft cb-red">
@@ -5577,78 +6281,118 @@ window.SLIDES = [
   },
 
   {
-    id: 'comparison',
-    category: 'Act 4 · Prior protocols',
-    title: 'The landscape, and where the near-term argument is won',
+    id: 'qec-classical-rep',
+    category: 'Act 3 · Errors',
+    title: 'Error correction: the classical warm-up',
     narrative: `
+      <p class="cb-big">Classical computers fight noise too. They just hide it
+      well.</p>
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Read the fourth column</p>
-        <p>The scalings are well known. The column that decides what is buildable
-        now is "what it needs".</p>
+        <p class="cb-title cb-blue">Encode</p>
+        <p>Send three copies of every bit: $0 \\to 000$ and $1 \\to 111$.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
-        <p class="cb-title cb-yellow">Two families avoid recovery entirely</p>
-        <p>Erasure-based protocols convert errors into flagged losses. Detection-only
-        protocols extract a syndrome and stop there, handing the flag to the
-        estimator.</p>
+        <p class="cb-title cb-yellow">Decode by majority vote</p>
+        <p>If the channel flips one of the three bits, two out of three still
+        agree. Read the majority.</p>
       </div>
-      <div class="cb cb-hard cb-green">
-        <p class="cb-title cb-green">This work is in the detection family</p>
-        <p>Syndrome extraction and classical post-processing. No noiseless ancillae,
-        no recovery gates on the probe.</p>
+      <div class="cb cb-hard cb-green center">
+        <p class="cb-title cb-green">Redundancy buys reliability.</p>
+        <p>All of error correction grows from this move.</p>
       </div>
     `,
-    viz: 'compare-table',
-    vizParams: {
-      title: 'Routes to sub-SQL phase estimation',
-      columns: ['Protocol', 'Idea', 'Scaling', 'What it needs', 'Ref.'],
-      highlight: 5,
-      rows: [
-        ['Ramsey / product state',
-         '$N$ uncorrelated atoms, average the outcomes',
-         '$1/\\sqrt{N}$ (SQL)',
-         'nothing beyond the sensor itself',
-         'Caves 1981; Wineland et al. 1994'],
-        ['GHZ',
-         'maximally entangled probe accumulates $N\\Delta\\phi$',
-         '$1/N$ ideal; falls back to SQL under dephasing',
-         'GHZ preparation, parity readout, a short coherence budget',
-         'Bollinger et al. 1996; Huelga et al. 1997'],
-        ['Spin squeezing',
-         'redistribute projection noise between conjugate quadratures',
-         'between $1/\\sqrt{N}$ and $1/N$',
-         'a squeezing interaction; still decoherence-limited',
-         'Kitagawa &amp; Ueda 1993; Pezz&egrave; et al. 2018'],
-        ['QEC-enhanced (HNLS)',
-         'correct the noise while preserving the signal',
-         '$1/N$ when HNLS holds',
-         'noiseless ancillae plus fast recovery rounds',
-         'Zhou et al. 2018; Demkowicz-Dobrzanski et al. 2012'],
-        ['Erasure-based',
-         'engineer errors into flagged erasures',
-         '$1/N$ with high erasure conversion',
-         'biased-erasure hardware',
-         'Arieli, Retzker &amp; Gefen 2026'],
-        ['Detection-only',
-         'count the codewords that survive detection',
-         'robust scaling with no recovery',
-         'syndrome extraction only, then classical inference',
-         'Novak &amp; Rengaswamy, IEEE Trans. Quantum Eng. 2026'],
-        ['Sequential / adaptive',
-         'repeat the phase evolution, adapt the next measurement',
-         '$1/N$ without entanglement',
-         'long coherent sequences and adaptive control',
-         'Higgins et al. 2007; Smith et al. 2024'],
-      ],
-      note: 'Every reference resolves to an entry in the paper bibliography. The highlighted row is the family this work belongs to.',
-    },
+    viz: 'classical-repetition',
+    vizParams: { bit: 1, flip: 1 },
   },
 
-  // ===================== ACT 5 - OUR PROTOCOL ===============================
+  {
+    id: 'qec-when-helps',
+    category: 'Act 3 · Errors',
+    title: 'When does the code help?',
+    narrative: `
+      <div class="cb cb-soft cb-blue">
+        <p class="cb-title cb-blue">Without the code</p>
+        <p>If each bit flips with probability $p$, the unencoded message is
+        wrong with probability $p$.</p>
+      </div>
+      <div class="cb cb-soft cb-yellow">
+        <p class="cb-title cb-yellow">With the code</p>
+        <p>Majority vote fails only if <em>two or more</em> of the three bits
+        flip. That happens with probability</p>
+        <p>$$ P_{\\text{logical}} = 3p^2(1-p) + p^3 = 3p^2 - 2p^3. $$</p>
+      </div>
+      <div class="cb cb-hard cb-green">
+        <p class="cb-title cb-green">Threshold</p>
+        <p>$3p^2 - 2p^3 < p$ exactly when $p < 1/2$. Below the threshold, the
+        code helps. Above it, the code <em>hurts</em>.</p>
+      </div>
+    `,
+    viz: 'error-rate-plot',
+    vizParams: { showQuantum: true },
+  },
+
+  {
+    id: 'qec-quantum-catch',
+    category: 'Act 3 · Errors',
+    title: 'The quantum catch',
+    narrative: `
+      <p class="cb-big">We cannot just copy a qubit.</p>
+      <div class="cb cb-soft cb-red">
+        <p class="cb-title cb-red">No copying, no peeking</p>
+        <p>No quantum operation turns an unknown $\\ket{\\psi}$ into copies of
+        itself, and measuring the qubit to read its amplitudes destroys the
+        superposition: one shot returns one bit.</p>
+      </div>
+      <div class="cb cb-soft cb-purple">
+        <p class="cb-title cb-purple">What we can do instead</p>
+        <p>Encode $\\alpha\\ket{0} + \\beta\\ket{1}$ as $\\alpha\\ket{000} +
+        \\beta\\ket{111}$. The amplitudes ride on a 3-qubit entangled state,
+        not on three separate copies.</p>
+      </div>
+      <div class="cb cb-hard cb-green center">
+        <p class="cb-title cb-green">Entanglement, not duplication.</p>
+        <p>The quantum code looks like the classical one on paper. The physics
+        underneath is Act 1's entanglement.</p>
+      </div>
+    `,
+    viz: 'failed-cloner',
+  },
+
+  {
+    id: 'qec-syndrome',
+    category: 'Act 3 · Errors',
+    title: 'Reading the error without reading the data',
+    narrative: `
+      <div class="cb cb-soft cb-blue">
+        <p class="cb-title cb-blue">Two parity questions</p>
+        <p>Two helper qubits each ask one question of the register: <em>do
+        these two qubits agree?</em> On every branch $\\ket{abc}$,</p>
+        <p>$$ s_1 = a \\oplus b, \\qquad s_2 = b \\oplus c. $$</p>
+      </div>
+      <div class="cb cb-soft cb-yellow">
+        <p class="cb-title cb-yellow">Why that is safe</p>
+        <p>Agreement is a property both codewords share, so the answers never
+        distinguish $\\alpha\\ket{000}$ from $\\beta\\ket{111}$. The syndrome
+        $(s_1, s_2)$ pinpoints <em>which</em> qubit flipped while the encoded
+        amplitudes stay coherent, and textbook QEC then applies the matching
+        correction.</p>
+      </div>
+      <div class="cb cb-hard cb-green center">
+        <p class="cb-title cb-green">Encode redundantly. Measure parity, not
+        data.</p>
+        <p>That refrain is all of error correction, and the next act reuses
+        it.</p>
+      </div>
+    `,
+    viz: 'syndrome-stepper',
+    vizParams: { error: 'X2' },
+  },
+
+  // ===================== ACT 4 - OUR PROTOCOL ===============================
 
   {
     id: 'sql-barrier',
-    category: 'Act 5 · Our protocol',
+    category: 'Act 4 · Our protocol',
     title: 'The turn: why the probe has to stay entangled',
     narrative: `
       <div class="cb cb-soft cb-red">
@@ -5702,13 +6446,14 @@ window.SLIDES = [
 
   {
     id: 'detection-not-correction',
-    category: 'Act 5 · Our protocol',
+    category: 'Act 4 · Our protocol',
     title: 'Detection, not correction',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">Measure the syndrome, then stop</p>
-        <p>Auxiliary measurements flag that an error occurred, and where. No recovery
-        operation is applied to the probe.</p>
+        <p class="cb-title cb-blue">We measure parity, and then we stop</p>
+        <p>The same parity questions as the last act: the syndrome flags that
+        an error occurred, and where. No recovery operation is applied to the
+        probe.</p>
         <p class="tag">The dashed line is where the protocol ends. Nothing acts
         back on the probe.</p>
       </div>
@@ -5729,7 +6474,7 @@ window.SLIDES = [
 
   {
     id: 'logical-ghz',
-    category: 'Act 5 · Our protocol',
+    category: 'Act 4 · Our protocol',
     title: 'Logical GHZ with parity readout',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5758,7 +6503,7 @@ window.SLIDES = [
 
   {
     id: 'numerics',
-    category: 'Act 5 · Our protocol',
+    category: 'Act 4 · Our protocol',
     title: 'It works in simulation',
     narrative: `
       <div class="cb cb-soft cb-blue">
@@ -5790,18 +6535,18 @@ window.SLIDES = [
     },
   },
 
-  // ========================= ACT 6 - CLOSE ==================================
+  // ========================= ACT 5 - CLOSE ==================================
 
   {
     id: 'pilot',
-    category: 'Act 6 · Close',
+    category: 'Act 5 · Close',
     title: 'A pilot study you could start now',
     narrative: `
       <div class="cb cb-soft cb-blue">
         <p class="cb-title cb-blue">The proposal</p>
-        <p>Run syndrome-conditioned inference on an existing tweezer-clock or
-        laboratory-gravimeter GHZ testbed. The hardware already exists, and it is
-        already producing the GHZ states.</p>
+        <p>Run syndrome-conditioned inference on an existing GHZ testbed. The
+        hardware already exists, and it is already producing the GHZ
+        states.</p>
       </div>
       <div class="cb cb-soft cb-green">
         <p class="cb-title cb-green">What it needs</p>
@@ -5839,16 +6584,17 @@ window.SLIDES = [
 
   {
     id: 'key-messages',
-    category: 'Act 6 · Close',
+    category: 'Act 5 · Close',
     title: 'Key messages',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p><strong class="cb-blue">1.</strong> Precision measurement, gravimetry
-        included, is a phase-estimation problem.</p>
+        <p><strong class="cb-blue">1.</strong> Precision measurement is a
+        phase-estimation problem.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
-        <p><strong class="cb-yellow">2.</strong> 1 µGal at $T=100$ ms costs
-        $3.9\\times10^{5}$ atoms at the SQL, 621 at the Heisenberg limit.</p>
+        <p><strong class="cb-yellow">2.</strong> Independent probes average to
+        $1/\\sqrt{N}$; one entangled probe reaches $1/N$, about 620 times fewer
+        atoms at the same precision (a 1 µGal gravity-survey target).</p>
       </div>
       <div class="cb cb-soft cb-red">
         <p><strong class="cb-red">3.</strong> Decoherence takes that back, and full
@@ -5889,7 +6635,7 @@ window.SLIDES = [
 
   {
     id: 'qupacabrathon',
-    category: 'Act 6 · Close',
+    category: 'Act 5 · Close',
     title: 'Qupacabrathon 2026',
     narrative: `
       <div class="cb cb-hard cb-green center">
