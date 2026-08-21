@@ -5885,7 +5885,7 @@ registerViz('wave-interference', WaveInterference);
 
 </script>
 <script>
-// slides.js — IEEE High Plains section talk, 23 slides (22 presented, 1
+// slides.js — IEEE High Plains section talk, 24 slides (23 presented, 1
 // backup). Built from the US CLIVAR deck on 2026-08-20; see README.md.
 // Third revision, same day, hours before the talk: Act 1 rebuilt as a
 // self-standing intro to quantum computing (superposition, interference,
@@ -5895,10 +5895,13 @@ registerViz('wave-interference', WaveInterference);
 // abstract SQL-vs-Heisenberg statement (the 620x ratio survives with its
 // provenance in one parenthetical), and a four-slide QEC intro added, its
 // text reused from the course's bit-flip lecture, where it has already been
-// verified and taught.
+// verified and taught. A multi-qubit slide (two bits versus two qubits, from
+// course lectures 8 and 9) was added between the qubit and interference
+// slides after the first evening publish.
 //
-// Arc: hook -> quantum computing 101 (superposition, interference, the 2^n
-// space, entanglement, statistics) -> LIGO pivot to sensing -> Ramsey +
+// Arc: hook -> quantum computing 101 (superposition, the multi-qubit
+// register, interference, the 2^n space, entanglement, statistics) -> LIGO
+// pivot to sensing -> Ramsey +
 // inference -> SQL vs Heisenberg -> decoherence -> QEC from the classical
 // repetition code -> SQL barrier -> our protocol (detection, not correction)
 // -> numerics -> pilot -> close.
@@ -5990,6 +5993,46 @@ window.SLIDES = [
     viz: 'probability',
   },
 
+  // Added after the third-revision publish, same evening: the room meets a
+  // register before Act 1 leans on one. Text from the course's lecture 8
+  // ("Classical vs Quantum: Two Bits") and lecture 9 ("The Exponential
+  // Scaling"), already taught and verified there.
+  {
+    id: 'multi-qubit',
+    category: 'Act 1 · Quantum computing',
+    title: 'Two bits versus two qubits',
+    narrative: `
+      <div class="cb cb-soft cb-blue">
+        <p class="cb-title cb-blue">Two classical bits: four options, pick one</p>
+        <p>A 2-bit register has four possible states: 00, 01, 10, 11. It is
+        always in <em>exactly one</em> of them.</p>
+      </div>
+      <div class="cb cb-soft cb-yellow">
+        <p class="cb-title cb-yellow">Two qubits: a weight on all four at once</p>
+        <p>$$ \\ket{\\psi} = \\alpha_{00}\\ket{00} + \\alpha_{01}\\ket{01}
+           + \\alpha_{10}\\ket{10} + \\alpha_{11}\\ket{11}. $$</p>
+      </div>
+      <div class="cb cb-hard cb-green center">
+        <p class="cb-title cb-green">Each added qubit doubles the space.</p>
+        <p>$n$ qubits carry $2^{n}$ amplitudes: an exponential amount of
+        information in a linear number of qubits.</p>
+      </div>
+    `,
+    viz: 'fact-card',
+    vizParams: {
+      title: 'From one qubit to many',
+      facts: [
+        { value: '$00,\\ 01,\\ 10,\\ 11$', color: 'blue',
+          label: 'two classical bits: four possibilities, exactly one of them real at a time' },
+        { value: '$\\alpha_{00}\\ket{00} + \\alpha_{01}\\ket{01} + \\alpha_{10}\\ket{10} + \\alpha_{11}\\ket{11}$', color: 'purple',
+          label: 'two qubits: one amplitude per combination, all four held at once' },
+        { value: '$\\ket{\\psi} = \\sum_{x \\in \\{0,1\\}^{n}} \\alpha_{x}\\ket{x}$', color: 'aqua',
+          label: 'n qubits: one amplitude per n-bit string, $2^{n}$ of them' },
+      ],
+      footer: 'Look, and the register still answers with one n-bit string. Putting the other amplitudes to work takes interference.',
+    },
+  },
+
   {
     id: 'interference',
     category: 'Act 1 · Quantum computing',
@@ -6021,9 +6064,9 @@ window.SLIDES = [
     title: 'What makes quantum different',
     narrative: `
       <div class="cb cb-soft cb-blue">
-        <p class="cb-title cb-blue">One more qubit doubles the space</p>
-        <p>$n$ qubits carry $2^{n}$ amplitudes at once. Feynman: simulating
-        $n$ spins costs $2^{n}$ classical numbers.</p>
+        <p class="cb-title cb-blue">Feynman's observation</p>
+        <p>Simulating $n$ interacting spins costs $2^{n}$ classical numbers,
+        one per amplitude the register holds.</p>
       </div>
       <div class="cb cb-soft cb-yellow">
         <p class="cb-title cb-yellow">Interference does the choreography</p>
