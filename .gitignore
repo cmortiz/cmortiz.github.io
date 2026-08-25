@@ -25,6 +25,7 @@ pnpm-debug.log*
 
 # AI agent files
 AGENTS.md
+CLAUDE.md
 # pixi environments
 .pixi/*
 !.pixi/config.toml
