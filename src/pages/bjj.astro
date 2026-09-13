@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="CSU Recreation Jiu-Jitsu"
+  description="Schedule, clothing, hygiene, safety, and classroom check-in for CSU Recreation Jiu-Jitsu."
+>
+  <article class="bjj">
+    <h1>CSU Recreation Jiu-Jitsu</h1>
+
+    <section aria-labelledby="schedule">
+      <h2 id="schedule">When and where</h2>
+      <p>Mondays and Wednesdays, September 21–December 9, 2026, 7–8:30 p.m. Mountain time.</p>
+      <p>CSU Rec Mat Room (Second Floor). Be ready to begin at 7. No class November 23 or 25.</p>
+    </section>
+
+    <section aria-labelledby="gear">
+      <h2 id="gear">What to wear and bring</h2>
+      <p>Wear clean, fitted athletic clothing with supportive underlayers. Skin coverage is encouraged except for the head, hands, and feet. A long-sleeve rash guard and full-length spats or leggings are good options.</p>
+      <p>A mouthguard and grappling shorts without pockets or Velcro are recommended. Bring water.</p>
+    </section>
+
+    <section aria-labelledby="hygiene">
+      <h2 id="hygiene">Hygiene</h2>
+      <p>Class policy: train barefoot. Wear shoes or sandals whenever off the mats, including restroom trips. Keep feet clean and nails trimmed.</p>
+      <p>Wash training clothes after each use and shower after training. Stay home when sick or with a suspected skin infection. Seek medical advice and follow return-to-training guidance. See <a href="https://www.cdc.gov/mrsa/prevention/athletes.html">CDC athlete hygiene guidance</a>.</p>
+      <p>Class policy: no training with open wounds, even when covered.</p>
+    </section>
+
+    <section aria-labelledby="accessories">
+      <h2 id="accessories">Accessories</h2>
+      <p>Remove eyeglasses during training, dangling jewelry, and metal rings. Athletic cups are prohibited. Silicone rings are permitted.</p>
+    </section>
+
+    <section aria-labelledby="safety">
+      <h2 id="safety">Partner safety</h2>
+      <ul>
+        <li>Anyone may decline a partner or stop training. Communicate injuries and limits.</li>
+        <li>Tap early, physically or verbally. Release immediately when a partner taps or asks to stop.</li>
+        <li>Control movement and adjust intensity to your partner. Allow room to learn without constant unsolicited coaching.</li>
+        <li>Stop and reset before colliding with another pair. Return lifted partners to the mat under control.</li>
+      </ul>
+      <p class="source">Further discussion: <a href="https://www.youtube.com/watch?v=Z2zyy0cu7dA">Danaher's training-safety discussion</a>.</p>
+    </section>
+
+    <section aria-labelledby="restrictions">
+      <h2 id="restrictions">Restrictions</h2>
+      <p>Standing grappling and controlled guard pulls require instructor permission. The following are prohibited in this class:</p>
+      <ul>
+        <li>Jumping guard, flying submissions, scissor takedowns (kani basami), and rear sacrifice takedowns (tani otoshi).</li>
+        <li>High-amplitude takedowns or throws, slams, and heel hooks.</li>
+        <li>Striking, biting, hair pulling, eye gouging, pressure-point attacks, grabbing individual fingers, and squeezing the head solely to cause pain.</li>
+      </ul>
+      <p>Unsafe behavior may result in removal from class.</p>
+    </section>
+
+    <section aria-labelledby="check-in">
+      <h2 id="check-in">Check-in and contact</h2>
+      <p>Scan the QR code in class and sign in with your CSU account. If you have trouble accessing check-in, ask the instructor.</p>
+      <p>Carlos M. Ortiz Marrero<br /><a href="mailto:carlos.ortiz.marrero@colostate.edu">carlos.ortiz.marrero@colostate.edu</a></p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .bjj {
+    padding-bottom: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  h1 {
+    color: var(--primary);
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+
+  .source {
+    font-size: 0.9rem;
+  }
+</style>
