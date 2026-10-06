@@ -59,6 +59,10 @@
       {
         "label": "Repo",
         "url": "https://github.com/pnnl/hybridlane"
+      },
+      {
+        "label": "Blog",
+        "url": "https://pennylane.ai/blog/2026/10/introducing-hybridlane"
       }
     ]
   },
