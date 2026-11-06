@@ -1,5 +1,16 @@
 [
     {
+        "title": "HAQC 2027: 1st Conference on Hybrid Analog-Digital Quantum Computing · NC State University",
+        "role": "Co-organizer with Yuan Liu · January 2027, Raleigh, NC",
+        "image": "/img/hybrid_cv_dv.png",
+        "links": [
+            {
+                "label": "Website",
+                "url": "https://cvdv.ncsu.edu/haqc-2027/"
+            }
+        ]
+    },
+    {
         "title": "Qupacabrathon 2026: Quantum Computing Hackathon",
         "role": "Lead Organizer; with Leo Rodolico, Jim Furches",
         "image": "/img/qupacabrathon.webp",
